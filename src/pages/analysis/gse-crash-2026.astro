@@ -1,0 +1,160 @@
+---
+import Article from '../../layouts/Article.astro';
+import AudienceBreakdown from '../../components/AudienceBreakdown.astro';
+import gseHero from '../../assets/images/heroes/gse-crash.jpg';
+
+const headings = [
+  { text: 'What Happened', id: 'what-happened' },
+  { text: 'What Drove the Rally', id: 'what-drove-the-rally' },
+  { text: 'Why It Crashed', id: 'why-it-crashed' },
+  { text: 'The Cocoa Question', id: 'the-cocoa-question' },
+  { text: 'Four Scenarios From Here', id: 'four-scenarios-from-here' },
+  { text: 'What to Watch', id: 'what-to-watch' },
+  { text: 'What This Means for You', id: 'what-this-means' },
+];
+
+const relatedArticles = [
+  {
+    href: '/analysis/hormuz-crisis-ghana-2026',
+    title: 'Hormuz Crisis: How $114 Oil Reaches a Ghanaian Market Stall',
+    description: 'Four transmission channels from the Strait of Hormuz to Ghana fuel pumps, transport costs, and imported goods.',
+    tag: 'Risk Alert',
+    tagType: 'risk' as const,
+  },
+];
+---
+
+<Article
+  title="GSE Crash: From 15,000 to 12,990 in One Week"
+  description="The Ghana Stock Exchange hit a record 15,185 then lost 14% in days. What drove the rally, why it crashed, and what the correction reveals about structural risk in Ghana's capital markets."
+  keywords="Ghana Stock Exchange crash 2026, GSE crash, GSE-CI correction, Ghana stock market 2026, Ghana capital markets risk, MTN Ghana sell-off"
+  publishedDate="2026-03-29"
+  heroImage={gseHero}
+  heroAlt="Ghana Stock Exchange composite index chart showing the March 2026 correction"
+  heroCredit="Nicholas Cappello"
+  heroCreditSource="Unsplash"
+  tag="Risk Alert"
+  tagType="risk"
+  section={{ label: 'Analysis', href: '/analysis' }}
+  headings={headings}
+  relatedArticles={relatedArticles}
+  wordCount={1800}
+  confidence="HIGH (GSE price data confirmed, trading volumes verified)"
+  source="GhanaWorld Cycles 035-040 | WEB-FRESH 2026-03-29"
+>
+  <p class="article-lede">On March 10, the Ghana Stock Exchange Composite Index (GSE-CI) breached 15,000 for the first time in the exchange's history. By March 27, it had fallen to 12,990. More than GHS 55 billion in market capitalisation was erased in days. The correction was not caused by an economic crisis. It was caused by the structure of the rally itself.</p>
+
+  <p>This article traces what drove the rally, what triggered the reversal, why the cocoa crisis may be connected, and what four scenarios look like from here. Every claim is sourced to verified market data.</p>
+
+  <h2 id="what-happened">What Happened</h2>
+
+  <div class="data-box">
+    <h4>Key Numbers</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Indicator</th><th>Value</th><th>Source</th></tr>
+        <tr><td>GSE-CI Peak (10 Mar)</td><td>15,185</td><td>GSE</td></tr>
+        <tr><td>GSE-CI Close (27 Mar)</td><td>~12,990</td><td>GSE</td></tr>
+        <tr><td>Total Decline</td><td>~2,195 points (14.4%)</td><td>Calculated</td></tr>
+        <tr><td>Market Cap Lost</td><td>>GHS 55 billion</td><td>Graphic Online, NewsGhana</td></tr>
+        <tr><td>YTD Return (at peak)</td><td>+77.0%</td><td>African Markets</td></tr>
+        <tr><td>YTD Return (post-crash)</td><td>+48.1%</td><td>GSE, NewsGhana</td></tr>
+        <tr><td>Record Session Turnover</td><td>GHS 300.5 million (26 Mar)</td><td>GSE</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <p>The crash unfolded over three sessions. On March 25, the GSE-CI shed 875 points to 14,441, the sharpest single-day decline of 2026. On March 26, it lost another 884 points to 13,556, with GHS 44 billion in market cap erased in 48 hours. That session produced the highest single-day turnover in the exchange's history: GHS 300.5 million across 55.9 million shares. By March 27, the index had fallen further to approximately 12,990.</p>
+
+  <p>The sell-off was led by the two heaviest-weighted stocks. Scancom PLC (MTN Ghana) fell from GHS 6.50 on March 24 to GHS 5.03 by March 27, a 22.6% decline over three sessions. GCB Bank fell GHS 4.57 in a single session on March 25, closing at GHS 41.20. The GSE Financial Stocks Index (GSE-FSI) lost 18.2% in one week, though it remained up 80.2% year to date.</p>
+
+  <h2 id="what-drove-the-rally">What Drove the Rally</h2>
+
+  <p>The rally from January to mid-March was extraordinary: +77% year to date. Understanding why it happened is essential to understanding why it crashed. The rally was not driven primarily by earnings growth. It was driven by three structural forces:</p>
+
+  <p><strong>Treasury bill compression.</strong> The 91-day T-bill rate fell to 5.32% in March 2026, down from over 28% in 2024. With inflation at 3.3% (the lowest since 1999), the real return on T-bills was approximately 2%. Institutional investors holding large fixed-income portfolios were forced to find yield elsewhere. The GSE was the obvious destination.</p>
+
+  <p><strong>Macro fundamentals.</strong> Ghana's economy posted 6.0% GDP growth in 2025 (confirmed by the Ghana Statistical Service), with non-oil GDP at 7.6%. Inflation had declined for 14 consecutive months. The Bank of Ghana cut the policy rate by a cumulative 12.5 percentage points since July 2025 (most recently to 14% in March 2026). Gross international reserves reached $14.8 billion (5.8 months of import cover). The trade surplus hit $13.66 billion for full-year 2025.</p>
+
+  <p><strong>Post-IMF confidence.</strong> With the IMF programme exit expected in April or May 2026, a narrative of Ghana's economic recovery was firmly established. Bank lending rates fell from 30.1% to 19.2% year over year. Real private sector credit growth more than doubled.</p>
+
+  <div class="risk-box">
+    <h4>The Core Problem</h4>
+    <p>Much of the rally was <strong>search-for-yield rebalancing</strong>, not a fundamental re-rating of Ghanaian companies. When institutional investors completed their portfolio shift from fixed income to equities, the buying pressure stopped. The crash was the mirror image of the rally: the same structural force, in reverse.</p>
+  </div>
+
+  <h2 id="why-it-crashed">Why It Crashed</h2>
+
+  <p>The crash was not triggered by a single event. It was the result of four converging factors:</p>
+
+  <p><strong>1. Search-for-yield exhaustion.</strong> The T-bill compression that drove capital into equities was a one-time portfolio rebalancing. Once institutions completed the shift, new buying pressure dried up. The marginal buyer disappeared.</p>
+
+  <p><strong>2. Profit-taking at record levels.</strong> With the index up 77% year to date, the incentive to lock in gains was overwhelming. The March 26 session (55.9 million shares, GHS 300.5 million turnover) was the highest-volume session in GSE history, a signature of institutional, not retail, selling.</p>
+
+  <p><strong>3. Thin market structure.</strong> The GSE remains structurally thin. MTN Ghana alone accounted for over 91% of total volume on March 27 (13.8 million shares). When a single stock dominates volume to that degree, broad-based selling can produce outsized index movements. The GSE lacks the depth and breadth to absorb large institutional outflows without violent price action.</p>
+
+  <p><strong>4. The Hormuz overhang.</strong> The Strait of Hormuz crisis, which sent Brent crude to $112+ per barrel in the same week, introduced macroeconomic uncertainty. Fitch revised Ghana's 2026 GDP forecast down from 5.9% to 5.5%. The NPA raised diesel prices 25.7% in a single pricing window. This was not the primary cause of the sell-off, but it accelerated the timing.</p>
+
+  <h2 id="the-cocoa-question">The Cocoa Question</h2>
+
+  <p>There is a question GhanaWorld cannot yet fully answer: did the cocoa crisis contribute to the GSE sell-off?</p>
+
+  <p>The timing is suspicious. Cocoa prices collapsed from over $12,000 per tonne in 2024 to approximately $2,900 by late March 2026 (before a technical rebound to $3,141). Cocobod buyer debt to banks stands at GHS 7 to 8 billion ($650 to $750 million). GCB Bank, one of the crash's leading decliners, has material exposure to cocoa sector lending.</p>
+
+  <p>However, the sell-off was broad-based: telecoms and banking stocks fell together. There is no clean evidence that cocoa-exposed stocks fell disproportionately. This remains a Known Unknown (KU-055, KU-060 in GhanaWorld's register). We state the suspicion and the evidence gap honestly.</p>
+
+  <h2 id="four-scenarios-from-here">Four Scenarios From Here</h2>
+
+  <div class="data-box">
+    <h4>Scenario Summary</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Scenario</th><th>Probability</th><th>GSE-CI Range (Q2 2026)</th><th>Key Driver</th></tr>
+        <tr><td>Consolidation</td><td>45%</td><td>12,500 to 14,000</td><td>T-bill rates stable; no new shock</td></tr>
+        <tr><td>Recovery</td><td>20%</td><td>14,000 to 15,500</td><td>IMF exit catalyst; cocoa rebound above $3,500</td></tr>
+        <tr><td>Deeper correction</td><td>25%</td><td>10,500 to 12,500</td><td>Hormuz escalation; BoG pauses easing; cocoa below $2,500</td></tr>
+        <tr><td>Structural break</td><td>10%</td><td>Below 10,500</td><td>Banking sector stress from cocoa exposure; capital flight</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <p><strong>Consolidation (45%).</strong> The base case. Selling exhaustion (volume dropped 73% by March 27) suggests the institutional profit-taking wave is largely complete. If T-bill rates hold around 5% and no new shock materialises, the GSE-CI consolidates in the 12,500 to 14,000 range through Q2. The index remains up approximately 45 to 60% year to date, which is still exceptional.</p>
+
+  <p><strong>Recovery (20%).</strong> A clean IMF exit in April or May combined with cocoa prices recovering above $3,500 per tonne could restore confidence. New earnings data from banks (particularly GCB's reported GHS 3.2 billion profit) may attract fresh buying. However, this requires the Hormuz crisis to de-escalate.</p>
+
+  <p><strong>Deeper correction (25%).</strong> If Brent remains above $110 and the BoG pauses or reverses rate cuts at the May MPC meeting, the search-for-yield thesis breaks. Capital may flow back toward fixed income if T-bill rates rise. A cocoa price collapse below $2,500 would stress banking sector balance sheets.</p>
+
+  <p><strong>Structural break (10%).</strong> The tail risk scenario. If Cocobod buyer debt (GHS 7 to 8 billion) triggers provisioning requirements at major banks, the banking sector, which drove the rally, becomes the source of the next leg down. This would require cocoa prices to remain depressed while Hormuz keeps fuel costs elevated: a squeeze from both sides.</p>
+
+  <h2 id="what-to-watch">What to Watch</h2>
+
+  <div class="data-box">
+    <h4>Indicator Watchlist</h4>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Indicator</th><th>Threshold</th><th>Signal</th></tr>
+        <tr><td>91-day T-bill rate</td><td>Above 6.5%</td><td>Capital flows back to fixed income</td></tr>
+        <tr><td>BoG policy rate (May MPC)</td><td>Hold or hike</td><td>Easing cycle over; GSE loses tailwind</td></tr>
+        <tr><td>Cocoa price (ICE)</td><td>Below $2,500/tonne</td><td>Banking sector stress trigger</td></tr>
+        <tr><td>MTN Ghana daily volume</td><td>Above 15M shares</td><td>Renewed institutional selling</td></tr>
+        <tr><td>GSE-CI weekly close</td><td>Below 12,000</td><td>Deeper correction confirmed</td></tr>
+        <tr><td>Brent crude</td><td>Sustained above $115</td><td>Macro risk escalation</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <AudienceBreakdown
+    ghanaians="<p><strong>What to watch:</strong> If you hold stocks through a broker or pension fund, your portfolio likely lost 10 to 15% of its value this week. Do not panic-sell into the bottom of the correction. The GSE is still up over 48% year to date.</p><p><strong>How to prepare:</strong> If you are considering buying stocks for the first time, this correction may present better entry prices than the 15,000 peak. But be aware: the GSE is thin, and selling in a downturn is difficult. Only invest money you will not need for at least 12 months.</p>"
+    investors="<p><strong>Position implications:</strong> The correction confirms the rally was search-for-yield, not earnings-driven. Rebalancing is largely complete (73% volume decline signals exhaustion). The 12,500 to 14,000 range is the base case for Q2.</p><p><strong>Key risk:</strong> Banking sector exposure to Cocobod buyer debt (GHS 7 to 8 billion). Monitor GCB and SG Ghana provisioning in H1 results. If cocoa stays below $2,500, this becomes a credit event.</p><p><strong>Entry/exit:</strong> Wait for two consecutive weekly closes above 13,500 before adding. Below 12,000 signals deeper structural issues.</p>"
+    diaspora="<p><strong>What this means from abroad:</strong> If you invested in Ghana equities during the 2025 to 2026 rally, your portfolio was up 77% at peak and is now up approximately 48%. This is still an exceptional return. The crash does not erase the thesis; it corrects the excess.</p><p><strong>Steps from abroad:</strong> Contact your broker to verify current portfolio value. Do not issue sell orders during a correction unless you have a specific liquidity need. If considering new investment, the correction provides better entry prices, but wait for consolidation signals (two weeks of stable closes).</p>"
+    entrepreneurs="<p><strong>Opportunity assessment:</strong> The GSE correction does not directly affect most SME operations. However, if your business depends on bank credit, watch lending rate signals closely. If the BoG pauses easing in May, the credit environment tightens.</p><p><strong>First steps:</strong> If you were planning an IPO or private placement, timing has shifted. The market needs 4 to 8 weeks of stability before appetite for new issuances returns. Use this period to strengthen your financials and prepare documentation.</p>"
+  />
+
+  <h2 id="watch-next" style="margin-top:2rem;">Source and Methodology Notes</h2>
+
+  <p>GSE-CI and GSE-FSI data sourced from the Ghana Stock Exchange, verified against TradingEconomics, African Markets, and AFX. Individual stock prices from GSE daily reports, cross-referenced with Graphic Online and NewsGhana reporting. T-bill rates from Bank of Ghana auction results (March 2026). GDP and inflation data from the Ghana Statistical Service. Cocoa prices from ICE futures. Cocobod financial data from GhanaWorld Cycles 038 to 040 intelligence (sourced from Graphic Online, BFT Online).</p>
+
+  <p>Known Unknowns: KU-055 (sector composition of March 25 decline) and KU-060 (cocoa sector linkage to GSE crash) remain unresolved. These are stated as gaps, not conclusions.</p>
+
+  <p><em>This analysis is produced by GhanaScope, powered by GhanaWorld Cycles 035 to 040 intelligence. Data verified 2026-03-29.</em></p>
+</Article>
