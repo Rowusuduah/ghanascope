@@ -1,0 +1,216 @@
+---
+import Article from '../../layouts/Article.astro';
+import AudienceBreakdown from '../../components/AudienceBreakdown.astro';
+import agriHero from '../../assets/images/heroes/agriculture-ghana.jpg';
+
+const headings = [
+  { text: 'The Cocoa Crisis Changes Everything', id: 'cocoa-crisis' },
+  { text: 'Beyond Cocoa: Five Sub-Sectors That Matter', id: 'beyond-cocoa' },
+  { text: 'Cassava Processing: The Bakery Supply Chain', id: 'cassava' },
+  { text: 'Shea Butter: The Export Certification Play', id: 'shea' },
+  { text: 'Oil Palm: The $2B Import Gap', id: 'oil-palm' },
+  { text: 'Rice and Poultry: Import Substitution Limits', id: 'rice-poultry' },
+  { text: 'Government Investment: What Is Real', id: 'government-investment' },
+  { text: 'Failure Patterns in Ghana Agriculture', id: 'failure-patterns' },
+  { text: 'What This Means for You', id: 'what-this-means' },
+  { text: 'The Honest Assessment', id: 'honest-assessment' },
+];
+
+const relatedArticles = [
+  {
+    href: '/analysis/oil-palm-opportunity',
+    title: 'Oil Palm: The $2B Import Gap Nobody Is Filling',
+    description: 'Ghana imports over $2 billion in vegetable oils while its own oil palm sector operates far below potential.',
+    tag: 'Opportunity Brief',
+    tagType: 'opportunity' as const,
+  },
+  {
+    href: '/analysis/agro-processing-window',
+    title: 'Agro-Processing: The 12-Month Window',
+    description: 'Why the post-IMF stability window is the best entry point for agro-processing in a decade.',
+    tag: 'Opportunity Brief',
+    tagType: 'opportunity' as const,
+  },
+];
+---
+
+<Article
+  title="Agriculture: Beyond Cocoa"
+  description="Ghana's cocoa crisis has exposed the danger of commodity dependence. But agriculture is 19% of GDP, and the real opportunities are in cassava, shea, oil palm, and packaged food processing. A sector deep dive with honest scoring."
+  keywords="Ghana agriculture investment, Ghana cocoa crisis 2026, Ghana cassava processing, Ghana shea butter export, Ghana oil palm, Ghana agro-processing, Ghana farming investment, Cocobod crisis"
+  publishDate="March 29, 2026"
+  category="Agriculture and Agro-Processing"
+  readTime="14 min read"
+  tag="Sector Deep Dive"
+  tagType="opportunity"
+  heroImage={agriHero}
+  heroAlt="Farmers harvesting crops in a field in West Africa"
+  heroCredit="Pexels"
+  headings={headings}
+  relatedArticles={relatedArticles}
+>
+
+<h2 id="cocoa-crisis">The Cocoa Crisis Changes Everything</h2>
+
+<p>For decades, Ghana's agricultural identity has been synonymous with cocoa. The country is the world's second-largest producer, and cocoa has been the default mental model for anyone thinking about Ghanaian agriculture. That model just broke.</p>
+
+<div class="data-box">
+  <h4>Cocoa Crisis: Key Numbers</h4>
+  <table>
+    <thead><tr><th>Indicator</th><th>Before</th><th>Now</th></tr></thead>
+    <tbody>
+      <tr><td>World cocoa price</td><td>$8,000+/tonne (2024 peak)</td><td>$3,500-4,100/tonne (March 2026)</td></tr>
+      <tr><td>Cocobod producer price</td><td>GHS 58,000/tonne (~$5,286)</td><td>GHS 41,392/tonne (~$3,771)</td></tr>
+      <tr><td>Farmer payments (Nov-Dec 2025)</td><td>Expected</td><td>Unpaid as of Feb 2026</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Source:</strong> Cocobod official pricing, ICCO world market data [WEB-FRESH 2026-03-27]</p>
+  <p><strong>GhanaWorld verdict: Cocoa sub-sector is AVOID FOR NEW ENTRY.</strong></p>
+</div>
+
+<p>The collapse is not a temporary dip. World cocoa prices surged to historic highs in 2024 on supply shortages from West Africa, then crashed as speculative positions unwound and demand adjusted. Cocobod, Ghana's cocoa marketing board, cut the producer price by 29%. Farmers who delivered beans in November and December 2025 had not been paid as of February 2026.</p>
+
+<p>But here is what the cocoa crisis obscures: Ghana's agriculture is 19% of GDP. Agriculture grew 5.3% in Q4 2025. The sector that matters for investors and entrepreneurs is not cocoa; it is everything else.</p>
+
+<h2 id="beyond-cocoa">Beyond Cocoa: Five Sub-Sectors That Matter</h2>
+
+<p>GhanaWorld's 40+ analytical cycles have scored and ranked agricultural sub-sectors based on seven dimensions: market size, infrastructure compatibility, execution feasibility, currency risk, competitive dynamics, regulatory environment, and capital efficiency. The overall Agro-Processing sector scores 8.5/10, the highest of any sector tracked.</p>
+
+<div class="data-box">
+  <h4>Non-Cocoa Agricultural Sub-Sector Scores</h4>
+  <table>
+    <thead><tr><th>Sub-Sector</th><th>Score</th><th>Diaspora Classification</th><th>Capital Required</th></tr></thead>
+    <tbody>
+      <tr><td>Cassava Processing (HQCF)</td><td>6.65/10</td><td>Requires-Presence</td><td>$80,000-150,000</td></tr>
+      <tr><td>Shea Butter (Export)</td><td>6.2/10 (est.)</td><td>Requires-Presence</td><td>$60,000-120,000</td></tr>
+      <tr><td>Oil Palm</td><td>5.8-6.2/10</td><td>Requires-Presence</td><td>$200,000+</td></tr>
+      <tr><td>Rice (Import Substitution)</td><td>5.0/10 (est.)</td><td>Not-Diaspora-Suitable</td><td>$300,000+</td></tr>
+      <tr><td>Poultry</td><td>4.8/10 (est.)</td><td>Not-Diaspora-Suitable</td><td>$150,000+</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Source:</strong> GhanaWorld sector rankings, Cycles 013-040 synthesis</p>
+</div>
+
+<h2 id="cassava">Cassava Processing: The Bakery Supply Chain</h2>
+
+<p>Ghana has a large, active, commercially legible bakery ecosystem. Bakeries are highly sensitive to flour prices. High-Quality Cassava Flour (HQCF) can substitute 10-30% of imported wheat flour in bread, reducing cost and import dependence.</p>
+
+<p>The opportunity is processing cassava into HQCF and selling to bakeries as a cost-saving flour substitute. The market structure is visible: named bakeries, documented flour consumption patterns, and price sensitivity data from GhanaWorld's field research.</p>
+
+<div class="risk-box">
+  <h4>Cassava Processing: What Can Kill This Business</h4>
+  <ul>
+    <li><strong>Raw material inconsistency:</strong> Smallholder cassava supply varies in quality, moisture content, and timeliness. Without structured procurement (aggregation centres, quality testing, advance contracts), your factory sits idle. (FP-005)</li>
+    <li><strong>Power costs:</strong> Processing requires consistent electricity. Generator backup is not optional; it is a structural operating cost. Budget GHS 15,000-25,000/month ($1,370-2,280) for fuel. (FP-003)</li>
+    <li><strong>Working capital:</strong> You buy cassava roots before you sell flour. The cash cycle is 30-60 days. Without 90-120 day reserves, one delayed payment from a bakery buyer kills you. (FP-006)</li>
+    <li><strong>Bakery buyer discipline:</strong> Some bakeries pay late or switch suppliers for small price differences. Named anchor buyers secured before launch are essential.</li>
+  </ul>
+  <p><strong>Confidence:</strong> HIGH (based on 40+ cycles of analysis)</p>
+</div>
+
+<p>The cassava opportunity scored 6.65/10 after arithmetic verification in Cycle 021. That is a genuine, evidence-grounded score, not a rounded-up number. It reflects real market demand with real execution barriers.</p>
+
+<h2 id="shea">Shea Butter: The Export Certification Play</h2>
+
+<p>Ghana's northern regions produce significant shea nut volumes. The global shea butter market serves cosmetics, food, and pharmaceutical industries. The opportunity is processing raw shea nuts into refined or semi-refined butter for export markets, particularly the EU.</p>
+
+<p>The critical lesson from GhanaWorld's analysis: certification is an investment, not a compliance burden. The EU's EUDR (Deforestation Regulation) requires documented traceability from source to export. Operators who start certification documentation on Day 1 gain a durable competitive advantage over those who defer it.</p>
+
+<div class="data-box">
+  <h4>Shea Export Market Requirements</h4>
+  <table>
+    <thead><tr><th>Certification</th><th>Timeline</th><th>Cost (Estimate)</th><th>Market Access</th></tr></thead>
+    <tbody>
+      <tr><td>EU Organic</td><td>18-24 months</td><td>$5,000-15,000</td><td>Premium cosmetics, food</td></tr>
+      <tr><td>Fair Trade</td><td>12-18 months</td><td>$3,000-8,000</td><td>Ethical retail channels</td></tr>
+      <tr><td>EUDR Compliance</td><td>Ongoing</td><td>$2,000-5,000/year</td><td>All EU exports (mandatory)</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Source:</strong> GhanaWorld Cycle 019 Malaysia benchmark analysis, EUDR regulatory review</p>
+</div>
+
+<p>Shea requires northern Ghana networks. A diaspora founder without existing relationships in the Upper West, Upper East, or Northern regions faces a significant trust and logistics barrier. This is not a business you can start from Accra.</p>
+
+<h2 id="oil-palm">Oil Palm: The $2B Import Gap</h2>
+
+<p>Ghana imports over $2 billion in vegetable oils annually, mostly palm oil. Domestic production is approximately 300,000 tonnes against demand exceeding 500,000 tonnes. The government has launched a national oil palm development programme targeting 100,000 hectares and 250,000 jobs.</p>
+
+<p>The opportunity is real but slow. Oil palm trees take 3-4 years to reach commercial maturity. The capital requirement is high ($200,000+ minimum for a meaningful plantation). Land tenure risk in rural areas is significant (FP-007). This is a long-term play that suits patient, well-capitalised investors, not lean startups.</p>
+
+<p>GhanaWorld's pre-screening score of 5.8-6.2/10 reflects genuine potential constrained by timeline, capital intensity, and land risk. See our dedicated <a href="/analysis/oil-palm-opportunity">Oil Palm opportunity brief</a> for the full analysis.</p>
+
+<h2 id="rice-poultry">Rice and Poultry: Import Substitution Limits</h2>
+
+<p>Both rice and poultry are commonly cited as Ghana investment opportunities. Both have real demand. Both have structural problems that make them unsuitable for most diaspora investors.</p>
+
+<p><strong>Rice:</strong> Ghana imports significant volumes of rice. Domestic production is constrained by irrigation infrastructure (most rice farming is rain-fed), seed quality, and post-harvest losses. The government has made rice self-sufficiency a stated goal through multiple administrations without achieving it. The capital requirement for irrigated rice farming is $300,000+ for a commercially meaningful operation. Diaspora classification: Not-Diaspora-Suitable.</p>
+
+<p><strong>Poultry:</strong> Ghana's poultry industry faces a structural disadvantage: feed (maize, soya) is partially imported, creating cedi-denominated revenue against dollar-linked input costs (FP-002). Cheap frozen imports from Brazil and the US undercut domestic producers on price. Disease risk (avian influenza) adds biological uncertainty. Capital requirement: $150,000+ for a meaningful operation. Diaspora classification: Not-Diaspora-Suitable.</p>
+
+<div class="risk-box">
+  <h4>Why Rice and Poultry Score Below 5.0</h4>
+  <ul>
+    <li><strong>Infrastructure dependency:</strong> Both require reliable power, water, and cold chain that Ghana's rural areas cannot consistently provide</li>
+    <li><strong>Import competition:</strong> Cheap imports set a price ceiling that domestic producers struggle to match</li>
+    <li><strong>Currency mismatch:</strong> Feed and input costs linked to USD; revenue in GHS (FP-002)</li>
+    <li><strong>Capital intensity:</strong> Minimum viable scale requires $150,000-300,000+</li>
+    <li><strong>Presence requirement:</strong> Both require daily on-ground management; cannot be run remotely</li>
+  </ul>
+</div>
+
+<h2 id="government-investment">Government Investment: What Is Real</h2>
+
+<p>The Mahama administration has announced GHS 1.7 billion (~$155 million at GHS/USD 10.97) in agricultural investment: seven processing plants and 1,000 kilometres of rural roads. Additionally, a free fertiliser programme has been announced.</p>
+
+<div class="risk-box">
+  <h4>Policy Announcement vs. Implementation (FP-004)</h4>
+  <p>Ghana has a documented pattern of announced agricultural policies with delayed or zero implementation. The 1D1F (One District, One Factory) programme under the previous administration delivered a fraction of its stated targets. Planting for Food and Jobs had mixed results.</p>
+  <p><strong>GhanaWorld's rule:</strong> Do not base business viability on government investment promises until implementation evidence exists. If your business model only works because a government-funded road or factory materialises, you do not have a business model.</p>
+  <p><strong>Confidence in GHS 1.7B delivery:</strong> LOW (announced, no implementation evidence yet)</p>
+</div>
+
+<p>The free fertiliser programme is a fiscal commitment, not a market signal. It increases government spending obligations during a period when fiscal discipline is critical (IMF exit in August 2026). Founders should monitor whether the programme creates genuine agricultural productivity gains or becomes a fiscal drain.</p>
+
+<h2 id="failure-patterns">Failure Patterns in Ghana Agriculture</h2>
+
+<p>GhanaWorld has documented 36 failure patterns across 40+ cycles. The following are most relevant to agricultural investment:</p>
+
+<div class="data-box">
+  <h4>Top 5 Agricultural Failure Patterns</h4>
+  <table>
+    <thead><tr><th>Pattern</th><th>Classification</th><th>Core Risk</th></tr></thead>
+    <tbody>
+      <tr><td>FP-005: Weak raw material aggregation</td><td>Ghana-Amplified</td><td>Smallholder fragmentation means inconsistent supply without structured procurement</td></tr>
+      <tr><td>FP-003: Generator costs as structural</td><td>Ghana-Endemic</td><td>ECG SAIDI of 32.5 hours (2024); processing cannot rely on grid alone</td></tr>
+      <tr><td>FP-006: Thin working capital</td><td>Universal</td><td>Commercial lending at 25-28%; emergency credit is expensive</td></tr>
+      <tr><td>FP-014: Export optimism without logistics</td><td>Ghana-Amplified</td><td>EU/UK standards increasingly stringent; documentation gaps at farm level</td></tr>
+      <tr><td>FP-022: Certification neglected at launch</td><td>Ghana-Amplified</td><td>Cannot retroactively document practices from earlier seasons</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="what-this-means">What This Means for You</h2>
+
+<AudienceBreakdown
+  ghanaians="The cocoa price collapse directly affects 800,000+ farming households. If you depend on cocoa income, the next 12-18 months will be difficult. Cocobod's payment delays for Nov-Dec 2025 deliveries are a serious cash flow crisis for affected farmers. Diversification into cassava, vegetables, or other food crops is worth considering, but requires access to processing markets. Watch for whether the GHS 1.7 billion government investment actually reaches rural areas. The free fertiliser programme, if delivered, could reduce input costs."
+  investors="Agro-processing remains GhanaWorld's top-ranked sector at 8.5/10, but the opportunity is in non-cocoa processing (cassava, shea, palm, packaged food), not cocoa. The cocoa crisis actually reinforces this thesis: commodity dependence is the risk; processing before export is the hedge. Entry timing is favourable with the IMF exit stability window (August 2026 to mid-2027). Key due diligence: verify raw material supply chains, power reliability at the specific site, and working capital requirements (budget 150-200% of optimistic projections)."
+  diaspora="Every agricultural opportunity in Ghana requires presence. There are zero remote-viable agricultural business models that score above 6.0 in GhanaWorld's system. If you are considering agriculture from abroad, you need either a return plan or a deeply trusted local partner with verifiable accountability systems (bank visibility, independent audit, performance-linked compensation). The stability window (August 2026 to mid-2027) is the right time to visit, conduct due diligence, and make capital commitments. Do not send money based on phone calls and promises."
+  entrepreneurs="Cassava HQCF processing for bakeries is the most accessible agricultural opportunity for a first-time operator in Ghana (score 6.65/10, capital $80,000-150,000). The key to success: secure named bakery buyers BEFORE committing capital. Build aggregation relationships with cassava farmers BEFORE building a factory. Install cash reconciliation and inventory systems BEFORE delegating. The failure pattern data is clear: businesses that skip these steps do not survive. Start small, prove unit economics, then scale."
+/>
+
+<h2 id="honest-assessment">The Honest Assessment</h2>
+
+<p>Ghana's agricultural sector beyond cocoa offers genuine opportunities for disciplined operators. The macro environment is the most favourable in years: inflation at 3.3%, policy rate at 14% (down from 29%), cedi stable, and GDP growing at 6.0%.</p>
+
+<p>But "genuine opportunity" does not mean "easy money." Every sub-sector has specific constraints that will kill underprepared operators. The scoring methodology is designed to be honest: a 6.65 is not a 7.0, and the difference matters when you are committing your savings.</p>
+
+<div class="data-box">
+  <h4>Data Freshness</h4>
+  <p><strong>Reference date:</strong> March 29, 2026</p>
+  <p><strong>Macro data:</strong> FRESH (GSS, BoG, IMF, February-March 2026)</p>
+  <p><strong>Sector scores:</strong> CURRENT (GhanaWorld Cycles 013-040, last updated Cycle 040)</p>
+  <p><strong>Cocoa crisis data:</strong> FRESH (ICCO, Cocobod, March 2026)</p>
+  <p><strong>Government investment data:</strong> FRESH but UNVERIFIED (announced, no implementation evidence)</p>
+</div>
+
+</Article>

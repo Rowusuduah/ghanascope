@@ -1,0 +1,202 @@
+---
+import Article from '../../layouts/Article.astro';
+import AudienceBreakdown from '../../components/AudienceBreakdown.astro';
+import bogHero from '../../assets/images/heroes/imf-exit.jpg';
+
+const headings = [
+  { text: 'The Decision: 150 Basis Points', id: 'the-decision' },
+  { text: 'The Split Vote: What 3-1-1 Reveals', id: 'split-vote' },
+  { text: 'The Rate Trajectory: From 29% to 14%', id: 'rate-trajectory' },
+  { text: 'Why Lending Rates Have Not Followed', id: 'transmission-lag' },
+  { text: 'The Hormuz Complication', id: 'hormuz-complication' },
+  { text: 'May MPC: The Most Consequential Decision', id: 'may-mpc' },
+  { text: 'Sector-by-Sector Impact', id: 'sector-impact' },
+  { text: 'What This Means for You', id: 'what-this-means' },
+  { text: 'What to Watch', id: 'what-to-watch' },
+];
+
+const relatedArticles = [
+  {
+    href: '/analysis/imf-exit-2026',
+    title: "Ghana's IMF Exit: What August 2026 Means",
+    description: 'The stability window, the historical drift pattern, and five indicators to watch.',
+    tag: 'Policy Analysis',
+    tagType: 'policy' as const,
+  },
+  {
+    href: '/scenarios/triple-shock-2026',
+    title: "Ghana's Triple Shock: Three Scenarios for 2026",
+    description: 'Hormuz, cocoa, and the GSE crashed simultaneously. Four scenario models with probabilities.',
+    tag: 'Scenario Analysis',
+    tagType: 'scenario' as const,
+  },
+];
+---
+
+<Article
+  title="BoG Rate Cut to 14%: What the Split Vote Means for Business"
+  description="The Bank of Ghana cut the policy rate 150 basis points to 14.0% on March 18, 2026, but the 3-1-1 split vote reveals deep disagreement about inflation risk from the Hormuz crisis. We analyse the transmission lag, the May MPC pivot, and what it means for borrowing, housing, and investment."
+  keywords="Bank of Ghana rate cut 2026, Ghana policy rate 14 percent, Ghana monetary policy, Ghana MPC March 2026, Ghana lending rates, Ghana interest rates, Ghana inflation 2026, Ghana business borrowing"
+  publishDate="March 29, 2026"
+  category="Monetary Policy"
+  readTime="10 min read"
+  tag="Policy Analysis"
+  tagType="policy"
+  heroImage={bogHero}
+  heroAlt="US dollar bills representing monetary policy and financial flows"
+  heroCredit="Pexels"
+  headings={headings}
+  relatedArticles={relatedArticles}
+>
+
+<h2 id="the-decision">The Decision: 150 Basis Points</h2>
+
+<p>On March 18, 2026, the Bank of Ghana's Monetary Policy Committee reduced the policy rate by 150 basis points to 14.0%. This continues an easing cycle that began from a peak of 29% in 2023, the emergency rate set during Ghana's debt crisis.</p>
+
+<div class="data-box">
+  <h4>The Numbers Behind the Decision</h4>
+  <table>
+    <thead><tr><th>Indicator</th><th>Value</th><th>Direction</th></tr></thead>
+    <tbody>
+      <tr><td>Policy rate (new)</td><td>14.0%</td><td>Down 150bps from 15.5%</td></tr>
+      <tr><td>Inflation (Feb 2026)</td><td>3.3%</td><td>Lowest since 1999</td></tr>
+      <tr><td>Real policy rate</td><td>10.7%</td><td>Still very restrictive</td></tr>
+      <tr><td>GDP growth (2025)</td><td>6.0%</td><td>Strong</td></tr>
+      <tr><td>Non-oil GDP growth</td><td>7.6%</td><td>Very strong</td></tr>
+      <tr><td>91-day T-bill rate</td><td>~15%</td><td>Compressed</td></tr>
+      <tr><td>Commercial lending rate</td><td>25-28%</td><td>Barely moved</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Source:</strong> Bank of Ghana MPC statement, March 18, 2026; GSS inflation release [WEB-FRESH 2026-03-27]</p>
+</div>
+
+<h2 id="split-vote">The Split Vote: What 3-1-1 Reveals</h2>
+
+<p>The headline is the cut. The story is the vote: 3-1-1. Three members voted for the 150-basis-point cut. One voted for a smaller 75-basis-point cut. One voted to hold the rate unchanged.</p>
+
+<p>This is not a technicality. The split reveals a fundamental disagreement within the MPC about the balance between two forces:</p>
+
+<ul>
+  <li><strong>The easing case (3 votes):</strong> Inflation at 3.3% is historically low. The real policy rate at 10.7% is deeply restrictive. GDP growth is strong. The economy needs lower borrowing costs to sustain momentum through the IMF exit transition.</li>
+  <li><strong>The caution case (1 vote for 75bps):</strong> The direction is right, but 150bps is too aggressive given the Hormuz oil shock. Diesel up 25.7% will feed through to inflation within 60-90 days. A more gradual cut preserves room to respond.</li>
+  <li><strong>The hold case (1 vote):</strong> With Brent at $112 and fuel prices spiking, cutting rates now risks having to reverse course in May if inflation accelerates. Better to wait for Q2 data.</li>
+</ul>
+
+<p>The dissenter who voted to hold was likely looking at the same data as the majority but weighting the Hormuz risk differently. In monetary policy, timing matters as much as direction. Cutting 150bps and then hiking in May would be worse for business confidence than holding at 15.5% and cutting later.</p>
+
+<h2 id="rate-trajectory">The Rate Trajectory: From 29% to 14%</h2>
+
+<div class="data-box">
+  <h4>Policy Rate: 2023-2026</h4>
+  <table>
+    <thead><tr><th>Date</th><th>Policy Rate</th><th>Change</th><th>Inflation at Decision</th></tr></thead>
+    <tbody>
+      <tr><td>March 2023</td><td>29.50%</td><td>+100bps</td><td>~50%</td></tr>
+      <tr><td>July 2023</td><td>30.00%</td><td>+50bps (peak)</td><td>~43%</td></tr>
+      <tr><td>January 2024</td><td>29.00%</td><td>-100bps (first cut)</td><td>~23%</td></tr>
+      <tr><td>September 2024</td><td>27.00%</td><td>-200bps</td><td>~22%</td></tr>
+      <tr><td>January 2025</td><td>25.50%</td><td>-150bps</td><td>~23%</td></tr>
+      <tr><td>September 2025</td><td>17.50%</td><td>(cumulative cuts)</td><td>~8%</td></tr>
+      <tr><td>January 2026</td><td>15.50%</td><td>-200bps</td><td>~4%</td></tr>
+      <tr><td>March 2026</td><td>14.00%</td><td>-150bps (split vote)</td><td>3.3%</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Source:</strong> Bank of Ghana historical MPC decisions</p>
+</div>
+
+<p>The trajectory is dramatic: from 30% to 14% in less than three years. This is the fastest easing cycle in Ghana's modern monetary history, enabled by the equally dramatic inflation collapse from 50%+ to 3.3%.</p>
+
+<h2 id="transmission-lag">Why Lending Rates Have Not Followed</h2>
+
+<p>The policy rate is 14%. Commercial lending rates remain at 25-28%. This 11-14 percentage point gap is the transmission problem.</p>
+
+<p>Why banks are not passing through the cuts:</p>
+
+<ul>
+  <li><strong>Risk premium:</strong> Banks price in Ghana's macroeconomic history. A country that had 50% inflation two years ago does not get 16% lending rates immediately after stabilisation.</li>
+  <li><strong>NPL overhang:</strong> Non-performing loans from the 2022-2023 crisis are still on bank balance sheets. Higher margins compensate for existing bad debt.</li>
+  <li><strong>Government borrowing:</strong> T-bills at ~15% offer banks a risk-free return that is close to the policy rate. Why lend to SMEs at 20% with default risk when you can buy government paper at 15% risk-free?</li>
+  <li><strong>Structural costs:</strong> Branch networks, cash handling, and compliance costs in Ghana are high relative to loan sizes.</li>
+</ul>
+
+<div class="risk-box">
+  <h4>The Lending Rate Reality</h4>
+  <p>A business borrowing GHS 500,000 (~$45,600) at 26% interest pays GHS 130,000 (~$11,850) per year in interest alone. At 14% (the policy rate), the same loan costs GHS 70,000 (~$6,380). The difference is GHS 60,000 ($5,470) per year, enough to hire two additional employees or fund three months of working capital.</p>
+  <p>Until lending rates actually drop below 20%, the policy rate cut is a macro signal, not a business cost reduction.</p>
+  <p><strong>When will lending rates drop?</strong> Historical pattern suggests 12-18 months after sustained low inflation and policy rate stability. If inflation stays below 5% through Q3 2026, lending rates may reach 22-24% by Q1 2027.</p>
+  <p><strong>Confidence:</strong> MEDIUM (depends on inflation trajectory and banking sector competition)</p>
+</div>
+
+<h2 id="hormuz-complication">The Hormuz Complication</h2>
+
+<p>The timing of the rate cut is complicated by the Hormuz crisis. Diesel prices rose 25.7% in one NPA pricing window. This cost increase will transmit through the economy over 60-90 days:</p>
+
+<ul>
+  <li><strong>Month 1 (April):</strong> Transport fares increase. Generator costs rise. Fishing costs increase (diesel-powered trawlers).</li>
+  <li><strong>Month 2 (May):</strong> Food prices adjust as transport costs feed through supply chains. Non-food inflation picks up.</li>
+  <li><strong>Month 3 (June):</strong> Second-round effects. Wage pressure if food prices rise significantly. GSS inflation data reflects the full pass-through.</li>
+</ul>
+
+<p>The April and May inflation prints are the critical data points. If April inflation stays below 4.5%, the Hormuz pass-through is contained. If it jumps above 5%, the MPC's March cut looks premature, and the May decision becomes much harder.</p>
+
+<h2 id="may-mpc">May MPC: The Most Consequential Decision</h2>
+
+<p>The May 2026 MPC meeting is the single most important monetary policy event of the year. Three possible outcomes:</p>
+
+<div class="data-box">
+  <h4>May MPC Decision Tree</h4>
+  <table>
+    <thead><tr><th>Scenario</th><th>Condition</th><th>Likely Action</th><th>Signal</th></tr></thead>
+    <tbody>
+      <tr><td>Hormuz de-escalates</td><td>Oil below $95; inflation below 4.5%</td><td>Cut 100-150bps to 12.5-13%</td><td>Easing continues; business confidence rises</td></tr>
+      <tr><td>Hormuz persists</td><td>Oil $95-110; inflation 4.5-6%</td><td>Hold at 14%</td><td>Cautious pause; wait for clearer data</td></tr>
+      <tr><td>Hormuz escalates</td><td>Oil above $110; inflation above 6%</td><td>Hold or hike 50-100bps</td><td>Tightening resumes; business confidence drops</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="sector-impact">Sector-by-Sector Impact</h2>
+
+<p><strong>Housing and Construction:</strong> The rate cut improves developer economics marginally, but mortgage rates at 28-35% remain prohibitive. A sustained rate below 12% would be needed to meaningfully expand mortgage access. The construction cost environment (inflation at 5.9%) is already favourable; the binding constraint is financing, not building costs.</p>
+
+<p><strong>SME Credit:</strong> The transmission lag means SMEs will not see meaningful borrowing cost reductions for 12-18 months. Businesses that need credit now should budget for 25-28% rates through at least Q1 2027.</p>
+
+<p><strong>Agriculture and Agro-Processing:</strong> Lower rates improve the economics of working capital financing, but only if banks actually lend at lower rates. The Hormuz-driven fuel cost increase partly offsets any interest cost reduction for energy-intensive processors.</p>
+
+<p><strong>Financial Services:</strong> T-bill compression (91-day at ~15%) continues squeezing fixed-income returns. This drives the search-for-yield that inflated (and then crashed) the GSE. Banks' net interest margins face pressure as the policy rate falls but lending rates remain sticky.</p>
+
+<h2 id="what-this-means">What This Means for You</h2>
+
+<AudienceBreakdown
+  ghanaians="The policy rate cut to 14% is good news, but it will not immediately lower your borrowing costs. If you have an existing loan at 28%, do not expect your bank to voluntarily reduce it; you will need to renegotiate or refinance. T-bill returns are being squeezed (91-day at ~15%), which means your savings earn less. If you are a salaried worker, watch the April-May inflation data. If fuel-driven price increases stay below 5%, your purchasing power is protected. If inflation accelerates past 6%, the cost-of-living relief from 2024-2025 will start reversing."
+  investors="The 3-1-1 vote tells you the BoG is not unanimously confident in continued easing. Position for optionality, not conviction. If you hold T-bills, returns will continue compressing (the search-for-yield dynamic is structural at these policy rate levels). If you are evaluating equity exposure after the GSE crash, the May MPC decision is your trigger: a further cut signals confidence; a hold signals caution; a hike signals trouble. Hard-currency revenue businesses are insulated from domestic rate dynamics."
+  diaspora="The rate cut makes Ghana's macro story more attractive, but the number that matters for your business is the commercial lending rate (25-28%), not the policy rate (14%). If you are planning to borrow in Ghana for a project, budget for 26% interest until at least Q1 2027. If you are sending capital from abroad, the cedi stability (GHS 10.97/$1, appreciated 29% YoY) means your dollars currently buy well. But watch the Hormuz-driven depreciation risk: if the cedi moves past 12.0, your capital buys less."
+  entrepreneurs="The rate cut helps your long-term cost of capital outlook but changes nothing today. Your bank is still charging 25-28%. Focus on cash flow management, not interest rate expectations. If you need working capital, explore mobile money-based lending platforms (often faster, sometimes cheaper for small amounts) or supplier credit rather than bank loans. The May MPC decision will signal whether 2026 is a year of continued easing (good for expansion planning) or a pause year (plan conservatively)."
+/>
+
+<h2 id="what-to-watch">What to Watch</h2>
+
+<div class="data-box">
+  <h4>Key Dates and Indicators</h4>
+  <table>
+    <thead><tr><th>Date</th><th>Event</th><th>Why It Matters</th></tr></thead>
+    <tbody>
+      <tr><td>Mid-April 2026</td><td>GSS March inflation release</td><td>First reading of Hormuz fuel pass-through</td></tr>
+      <tr><td>Late April 2026</td><td>NPA fuel pricing window</td><td>Will diesel prices rise further or stabilise?</td></tr>
+      <tr><td>Mid-May 2026</td><td>GSS April inflation release</td><td>Critical: does inflation stay below 5%?</td></tr>
+      <tr><td>Late May 2026</td><td>BoG MPC decision</td><td>The most consequential rate decision of 2026</td></tr>
+      <tr><td>August 2026</td><td>IMF programme exit</td><td>Fiscal discipline anchor removed</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="data-box">
+  <h4>Data Freshness</h4>
+  <p><strong>Reference date:</strong> March 29, 2026</p>
+  <p><strong>MPC decision:</strong> FRESH (Bank of Ghana, March 18, 2026)</p>
+  <p><strong>Inflation data:</strong> FRESH (GSS, February 2026)</p>
+  <p><strong>Lending rates:</strong> CURRENT (bank rate card estimates, Q1 2026)</p>
+  <p><strong>T-bill rates:</strong> FRESH (BoG auction results, March 2026)</p>
+</div>
+
+</Article>

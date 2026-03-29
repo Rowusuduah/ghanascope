@@ -1,0 +1,233 @@
+---
+import Article from '../../layouts/Article.astro';
+import AudienceBreakdown from '../../components/AudienceBreakdown.astro';
+import scenarioHero from '../../assets/images/heroes/gse-crash.jpg';
+
+const headings = [
+  { text: 'Three Shocks at Once', id: 'three-shocks' },
+  { text: 'Shock 1: Hormuz and Oil at $112', id: 'hormuz-shock' },
+  { text: 'Shock 2: Cocoa Price Collapse', id: 'cocoa-shock' },
+  { text: 'Shock 3: GSE Crash', id: 'gse-shock' },
+  { text: 'Why Ghana Can Absorb This (For Now)', id: 'absorption-capacity' },
+  { text: 'Four Scenarios From Here', id: 'four-scenarios' },
+  { text: 'Scenario Comparison', id: 'scenario-comparison' },
+  { text: 'What to Watch: Confirmation Indicators', id: 'confirmation-indicators' },
+  { text: 'What This Means for You', id: 'what-this-means' },
+  { text: 'Which Scenario Are We In?', id: 'current-assessment' },
+];
+
+const relatedArticles = [
+  {
+    href: '/analysis/hormuz-crisis-ghana-2026',
+    title: 'Hormuz Crisis: How $114 Oil Reaches a Ghanaian Market Stall',
+    description: 'Four transmission channels traced with real pricing data.',
+    tag: 'Risk Alert',
+    tagType: 'risk' as const,
+  },
+  {
+    href: '/analysis/gse-crash-2026',
+    title: 'GSE Crash: From 15,000 to 12,990 in One Week',
+    description: 'What drove the rally, why it crashed, and what it means.',
+    tag: 'Risk Alert',
+    tagType: 'risk' as const,
+  },
+  {
+    href: '/analysis/imf-exit-2026',
+    title: "Ghana's IMF Exit: What August 2026 Means",
+    description: 'The stability window, the historical drift pattern, and five indicators.',
+    tag: 'Policy Analysis',
+    tagType: 'policy' as const,
+  },
+];
+---
+
+<Article
+  title="Ghana's Triple Shock: Three Scenarios for 2026"
+  description="Hormuz, cocoa, and the GSE crashed simultaneously in March 2026. We model four scenarios: managed absorption (45%), quick resolution (15%), compound stress (25%), and cascading failure (10%). Each with probability estimates, sector impacts, and observable confirmation indicators."
+  keywords="Ghana economic scenarios 2026, Ghana Hormuz crisis, Ghana cocoa crisis, GSE crash 2026, Ghana economic forecast, Ghana triple shock, Ghana oil prices, Ghana investment risk"
+  publishDate="March 29, 2026"
+  category="Macro Scenario"
+  readTime="15 min read"
+  tag="Scenario Analysis"
+  tagType="scenario"
+  heroImage={scenarioHero}
+  heroAlt="Stock market chart showing sharp decline in red"
+  heroCredit="Pexels"
+  headings={headings}
+  relatedArticles={relatedArticles}
+>
+
+<h2 id="three-shocks">Three Shocks at Once</h2>
+
+<p>In March 2026, three crises hit Ghana simultaneously. None is individually catastrophic, but their convergence tests the economy's resilience in ways that no single indicator captures.</p>
+
+<div class="data-box">
+  <h4>The Triple Shock: March 2026</h4>
+  <table>
+    <thead><tr><th>Shock</th><th>Magnitude</th><th>Transmission Channel</th></tr></thead>
+    <tbody>
+      <tr><td>Hormuz Strait disruption</td><td>Brent crude $112.57; diesel +25.7% in one NPA window</td><td>Fuel costs → transport → food prices → inflation</td></tr>
+      <tr><td>Cocoa price collapse</td><td>$8,000+ → $3,500-4,100/tonne; Cocobod payment failures</td><td>Export revenue → farmer income → rural demand → fiscal</td></tr>
+      <tr><td>GSE crash</td><td>15,185 → 12,990 (-14.4%); ~GHS 55B market cap destroyed</td><td>Wealth effect → investor confidence → capital flows</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="hormuz-shock">Shock 1: Hormuz and Oil at $112</h2>
+
+<p>The Strait of Hormuz disruption pushed Brent crude to $112.57 per barrel. Ghana imports virtually all its petroleum products. The National Petroleum Authority raised diesel prices 25.7% in a single pricing window. The transmission is direct: fuel powers trotros (minibuses), trucks, generators, and fishing boats. When diesel rises, everything moves with it.</p>
+
+<p>The full analysis of the four transmission channels (fuel pump, transport, generator, imported goods) is in our <a href="/analysis/hormuz-crisis-ghana-2026">Hormuz Crisis report</a>. The critical question for scenario modelling: how long does oil stay above $100?</p>
+
+<h2 id="cocoa-shock">Shock 2: Cocoa Price Collapse</h2>
+
+<p>World cocoa prices crashed from highs above $8,000 per tonne to $3,500-4,100 by March 2026. Cocobod cut the producer price from GHS 58,000 to GHS 41,392 per tonne (a 29% reduction). Farmers who delivered beans in November and December 2025 remained unpaid as of February 2026.</p>
+
+<p>Cocoa is Ghana's second-largest export after gold. The price collapse reduces export revenue, farmer household income (affecting rural demand), and government cocoa-related fiscal receipts. Cocobod's payment failures add a financial system risk if cocoa sector debts cascade into banking sector exposure.</p>
+
+<h2 id="gse-shock">Shock 3: GSE Crash</h2>
+
+<p>The Ghana Stock Exchange composite index hit a record 15,185 in March 2026, driven by T-bill compression (91-day yields around 15%, real return approximately 1.5%) creating a search-for-yield migration into equities. When institutional profit-taking began, the thin market (approximately 40 listed companies with limited trading volumes) could not absorb selling pressure. The index lost 14.4% in days, destroying approximately GHS 55 billion (~$5 billion) in market capitalisation.</p>
+
+<p>The GSE crash is primarily a confidence shock. Most Ghanaians do not hold equities. But institutional investors, pension funds, and corporate treasuries that allocated to equities face paper losses. The full analysis is in our <a href="/analysis/gse-crash-2026">GSE Crash report</a>.</p>
+
+<h2 id="absorption-capacity">Why Ghana Can Absorb This (For Now)</h2>
+
+<p>Ghana enters the triple shock from its strongest macroeconomic position since 2019:</p>
+
+<div class="data-box">
+  <h4>Ghana's Shock Absorbers: March 2026</h4>
+  <table>
+    <thead><tr><th>Indicator</th><th>Value</th><th>Absorption Capacity</th></tr></thead>
+    <tbody>
+      <tr><td>GDP growth</td><td>6.0% (2025 confirmed)</td><td>Strong underlying momentum</td></tr>
+      <tr><td>Non-oil GDP growth</td><td>7.6%</td><td>Economy not oil-dependent for growth</td></tr>
+      <tr><td>Inflation</td><td>3.3% (Feb 2026)</td><td>Room for inflation to rise before crisis levels</td></tr>
+      <tr><td>Gross reserves</td><td>$14.5B / 5.8 months import cover</td><td>Adequate buffer for import cost shock</td></tr>
+      <tr><td>Public debt</td><td>45.3% of GDP</td><td>Down from 100%+; reduced fiscal vulnerability</td></tr>
+      <tr><td>Policy rate</td><td>14.0%</td><td>Room to pause or hike if needed</td></tr>
+      <tr><td>Current account surplus</td><td>~8.0% of GDP</td><td>External position strong</td></tr>
+      <tr><td>Gold exports</td><td>$20.9B (2025)</td><td>Dominant export unaffected by all three shocks</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Source:</strong> GSS, Bank of Ghana, IMF [WEB-FRESH 2026-03-28]</p>
+</div>
+
+<p>The most important absorber: gold. Ghana's gold exports ($20.9 billion in 2025) now dominate the export mix. Gold prices tend to rise during geopolitical crises (Hormuz) and economic uncertainty. Ghana's external revenue is structurally hedged against two of the three shocks.</p>
+
+<h2 id="four-scenarios">Four Scenarios From Here</h2>
+
+<h3>Scenario A: Managed Absorption (Probability: 45%)</h3>
+
+<p>Oil prices moderate to $90-95 per barrel by Q3 2026 as Hormuz tensions de-escalate partially. Cocoa stabilises at $4,000-4,500 per tonne. GSE recovers to 13,500-14,000 as T-bill rates remain compressed. Inflation rises to 5-6% (from fuel pass-through) but stays within BoG's comfort zone. The policy rate holds at 14% in May. IMF exit proceeds on schedule in August.</p>
+
+<p><strong>Time horizon:</strong> Q2-Q3 2026</p>
+<p><strong>Sector impact:</strong> Transport and logistics face 3-6 months of margin pressure. Agriculture absorbs the cocoa hit through diversification. Financial services digest the GSE correction. No systemic damage.</p>
+
+<h3>Scenario B: Quick Resolution (Probability: 15%)</h3>
+
+<p>Hormuz de-escalates rapidly. Oil returns to $80-85 per barrel. Cocoa rebounds above $5,000 as supply tightness reasserts. GSE recovers past 14,500 on renewed confidence. Inflation stays below 4%. BoG cuts the policy rate further (to 12-13%) in May or July. Growth accelerates toward 7%+ in 2026.</p>
+
+<p><strong>Time horizon:</strong> Q2 2026</p>
+<p><strong>Sector impact:</strong> Best-case for all sectors. The stability window for business entry extends. Capital inflows resume. This is the scenario where the post-IMF transition succeeds decisively.</p>
+
+<h3>Scenario C: Compound Stress (Probability: 25%)</h3>
+
+<p>Oil stays above $105-110 through Q3 2026. Cocoa drops below $3,500 with no recovery. GSE breaks below 12,000 as foreign investors exit. Inflation returns to 8-12% on sustained fuel and food price pass-through. Cedi depreciates past GHS 12.0/$1 as import costs drain reserves. BoG forced to hold at 14% or hike in Q3. IMF exit proceeds technically but fiscal pressure builds immediately.</p>
+
+<p><strong>Time horizon:</strong> Q2-Q4 2026</p>
+<p><strong>Sector impact:</strong> Severe for transport, logistics, agriculture, and import-dependent manufacturing. Consumer spending contracts. Real estate stalls. Only hard-currency digital businesses and gold-linked services maintain margins.</p>
+
+<div class="risk-box">
+  <h4>Compound Stress: What Breaks</h4>
+  <ul>
+    <li><strong>Transport operators:</strong> Diesel cost up 25%+ with no fare increase approval creates operating losses</li>
+    <li><strong>Agro-processors:</strong> Generator fuel costs spike while cocoa farmer spending power collapses</li>
+    <li><strong>SME borrowers:</strong> Commercial lending rates stay at 25-28%; working capital squeeze intensifies</li>
+    <li><strong>Diaspora investors:</strong> Cedi depreciation erodes the GHS value of dollar-denominated investments already made</li>
+    <li><strong>Government:</strong> Fuel subsidy pressure plus cocoa revenue decline creates fiscal deficit pressure just as IMF exits</li>
+  </ul>
+</div>
+
+<h3>Scenario D: Cascading Failure (Probability: 10%)</h3>
+
+<p>Hormuz escalates to full or near-full blockade. Oil hits $130+ per barrel. Ghana faces intermittent fuel shortages. Power rationing returns (dumsor) as thermal generation becomes prohibitively expensive. Inflation spikes to 15-20%. Cedi collapses past GHS 14-15/$1. BoG hikes to 18-20%. GSE drops below 10,000. Social unrest over fuel and food prices. IMF exit delayed or new programme negotiated.</p>
+
+<p><strong>Time horizon:</strong> Q3-Q4 2026</p>
+<p><strong>Sector impact:</strong> Economy-wide recession. This is a 2022-style crisis repeat. The only businesses that survive are those with hard-currency revenue, minimal Ghana infrastructure dependency, and low fixed costs.</p>
+
+<p><strong>Why 10%, not higher:</strong> Ghana's reserves ($14.5B) provide a significant buffer. Gold exports provide hard-currency inflow. A full Hormuz blockade is a low-probability geopolitical event. The Bank of Ghana has demonstrated competent crisis management in 2023-2025.</p>
+
+<h2 id="scenario-comparison">Scenario Comparison</h2>
+
+<div class="data-box">
+  <h4>Scenario Comparison Table</h4>
+  <table>
+    <thead><tr><th>Variable</th><th>A: Managed (45%)</th><th>B: Quick (15%)</th><th>C: Compound (25%)</th><th>D: Cascade (10%)</th></tr></thead>
+    <tbody>
+      <tr><td>Brent crude</td><td>$90-95</td><td>$80-85</td><td>$105-110</td><td>$130+</td></tr>
+      <tr><td>Cocoa price</td><td>$4,000-4,500</td><td>$5,000+</td><td>Below $3,500</td><td>Below $3,000</td></tr>
+      <tr><td>GSE index</td><td>13,500-14,000</td><td>14,500+</td><td>Below 12,000</td><td>Below 10,000</td></tr>
+      <tr><td>Inflation</td><td>5-6%</td><td>Below 4%</td><td>8-12%</td><td>15-20%</td></tr>
+      <tr><td>GHS/USD</td><td>10.5-11.5</td><td>10.0-10.5</td><td>12.0-13.0</td><td>14.0-15.0+</td></tr>
+      <tr><td>Policy rate</td><td>14% (hold)</td><td>12-13% (cut)</td><td>14-16% (hold/hike)</td><td>18-20% (hike)</td></tr>
+      <tr><td>IMF exit</td><td>On schedule (Aug)</td><td>On schedule</td><td>Technical exit, stress</td><td>Delayed/new programme</td></tr>
+      <tr><td>Business entry signal</td><td>PROCEED WITH CAUTION</td><td>STRONG ENTRY</td><td>PAUSE</td><td>DO NOT ENTER</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Probabilities sum to 95% (5% allocated to unforeseen variants)</strong></p>
+</div>
+
+<h2 id="confirmation-indicators">What to Watch: Confirmation Indicators</h2>
+
+<div class="data-box">
+  <h4>Monthly Indicator Watchlist</h4>
+  <table>
+    <thead><tr><th>Indicator</th><th>Points to A/B</th><th>Points to C/D</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Brent crude (monthly avg)</td><td>Below $95</td><td>Above $105 sustained</td><td>ICE Brent futures</td></tr>
+      <tr><td>NPA fuel price (per litre)</td><td>Stable or declining</td><td>Second increase within 60 days</td><td>NPA Ghana</td></tr>
+      <tr><td>GSS inflation (monthly)</td><td>Below 5%</td><td>Above 7% and rising</td><td>Ghana Statistical Service</td></tr>
+      <tr><td>BoG May MPC decision</td><td>Hold or cut</td><td>Hike</td><td>Bank of Ghana</td></tr>
+      <tr><td>GHS/USD exchange rate</td><td>Below 11.5</td><td>Above 12.0</td><td>BoG interbank rate</td></tr>
+      <tr><td>GSE composite index</td><td>Above 13,000</td><td>Below 12,000</td><td>Ghana Stock Exchange</td></tr>
+      <tr><td>Cocoa world price</td><td>Above $4,500</td><td>Below $3,500 sustained</td><td>ICCO daily prices</td></tr>
+      <tr><td>BoG gross reserves</td><td>Above $13B</td><td>Below $12B</td><td>BoG monthly report</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="what-this-means">What This Means for You</h2>
+
+<AudienceBreakdown
+  ghanaians="The triple shock hits your daily life through fuel prices first (diesel up 25.7%), then through transport fares, and then through food prices. If inflation stays at 5-6% (Scenario A), the impact is manageable. If it rises to 8-12% (Scenario C), the cost of living gains from 2024-2025 will be partially reversed. Watch the NPA fuel pricing windows (every two weeks) and GSS monthly inflation releases. The BoG May MPC decision is the single most important monetary policy event this year."
+  investors="The 45% base case (managed absorption) means Ghana's macro story remains intact, but entry timing shifts from 'now' to 'after May MPC clarity.' If you are already invested, the GSE correction is a mark-to-market event, not a fundamental deterioration (non-oil GDP at 7.6% is strong). If you are evaluating entry, wait for Scenario A confirmation: oil below $95, inflation below 5%, cedi stable below 11.5. Gold-linked and hard-currency revenue businesses are structurally hedged. Avoid cedi-revenue, import-dependent models until oil prices stabilise."
+  diaspora="Do not panic, but do not ignore the signals. If you have money committed to a Ghana project, ensure your local partner has adequate working capital buffer for a 3-6 month cost increase scenario. If you are planning a new investment, the responsible move is to wait for the May BoG MPC decision and Q2 inflation data before committing capital. The stability window (IMF exit August 2026) is still the right entry point, but only if Scenario A or B materialises. If Scenario C develops, delay by 6-12 months."
+  entrepreneurs="If you are already operating in Ghana, prepare for 3-6 months of cost pressure. Renegotiate fuel-intensive contracts now. Build a 90-day cash reserve if you do not already have one. If your business earns in cedis and pays for fuel or imported inputs in dollars, you are in the highest-risk category. If you earn in hard currency with minimal Ghana infrastructure dependency, the triple shock actually validates your business model (your competitors are getting squeezed while your costs are stable)."
+/>
+
+<h2 id="current-assessment">Which Scenario Are We In?</h2>
+
+<p>As of March 29, 2026, the evidence points most strongly to Scenario A (Managed Absorption). Ghana's reserves are adequate, gold exports provide a structural hedge, and the underlying economy (non-oil GDP 7.6%) has genuine momentum. The Bank of Ghana has institutional credibility from the 2023-2025 stabilisation programme.</p>
+
+<p>The key variable is oil. If Brent stays above $110 through May, the probability shifts from A toward C. The May MPC decision will reveal how the Bank of Ghana reads the balance between growth support and inflation risk.</p>
+
+<div class="data-box">
+  <h4>Current Scenario Assessment</h4>
+  <p><strong>Most likely:</strong> Scenario A (Managed Absorption, 45%)</p>
+  <p><strong>Key pivot date:</strong> May 2026 BoG MPC meeting</p>
+  <p><strong>Scenario lifecycle:</strong> ACTIVE (all four scenarios remain live)</p>
+  <p><strong>Next reassessment:</strong> After May MPC decision and April inflation data</p>
+  <p><strong>Confidence:</strong> MEDIUM (significant uncertainty from Hormuz geopolitics, outside Ghana's control)</p>
+</div>
+
+<div class="data-box">
+  <h4>Data Freshness</h4>
+  <p><strong>Reference date:</strong> March 29, 2026</p>
+  <p><strong>Oil prices:</strong> FRESH (ICE Brent, March 28, 2026)</p>
+  <p><strong>Cocoa prices:</strong> FRESH (ICCO, March 2026)</p>
+  <p><strong>GSE data:</strong> FRESH (GSE daily, March 2026)</p>
+  <p><strong>Macro data:</strong> FRESH (BoG, GSS, February-March 2026)</p>
+</div>
+
+</Article>
