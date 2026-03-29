@@ -208,6 +208,22 @@ img { max-width: 100%; height: auto; display: block; }
   border-bottom: 1px solid var(--dark-border);
 }
 
+.hero--home {
+  position: relative;
+  background: url('/images/homepage-accra.jpg') center center / cover no-repeat;
+  padding: 6rem 1.5rem 5rem;
+}
+.hero--home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 20, 25, 0.75);
+}
+.hero--home .hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-inner {
   max-width: 720px;
   margin: 0 auto;
