@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ghanascope.com/sitemap-index.xml
+Sitemap: https://ghanascope.vercel.app/sitemap-index.xml
