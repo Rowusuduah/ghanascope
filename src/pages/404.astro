@@ -6,55 +6,48 @@ import Base from '../layouts/Base.astro';
   title="Page Not Found"
   description="The page you're looking for doesn't exist yet. Browse our Ghana business analysis."
 >
-  <div class="hero" style="min-height:70vh;display:flex;align-items:center;justify-content:center;padding-top:5rem;">
-    <div class="hero-noise"></div>
-    <div style="text-align:center;position:relative;">
-      <div style="font-size:clamp(4rem,10vw,7rem);font-weight:800;letter-spacing:-3px;margin-bottom:0.5rem;" class="gradient-text">404</div>
-      <h1 style="font-size:clamp(1.2rem,2.5vw,1.6rem);margin-bottom:0.75rem;color:#fff;font-weight:700;">Page Not Found</h1>
-      <p style="color:rgba(255,255,255,0.45);margin-bottom:2.5rem;line-height:1.6;max-width:480px;margin-left:auto;margin-right:auto;">This analysis hasn't been published yet, or the URL is incorrect. We're continuously adding new Ghana business intelligence through the v3.0 pipeline.</p>
-      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
-        <a href="/" class="btn-home">Go Home</a>
-        <a href="/analysis" class="btn-analysis">Browse Analysis</a>
+  <div class="hero" style="min-height:60vh;display:flex;align-items:center;justify-content:center;">
+    <div class="hero-inner">
+      <div class="error-code">404</div>
+      <h1>Page Not Found</h1>
+      <p>This analysis has not been published yet, or the URL is incorrect. We are continuously adding new Ghana business intelligence through the v3.0 pipeline.</p>
+      <div class="error-links">
+        <a href="/" class="error-link">Home</a>
+        <a href="/analysis" class="error-link">Analysis</a>
+        <a href="/sectors" class="error-link">Sectors</a>
+        <a href="/diaspora" class="error-link">Diaspora</a>
       </div>
     </div>
   </div>
 </Base>
 
 <style>
-  .btn-home {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #D4A843 0%, #e8bd52 100%);
-    color: #0a0a1a !important;
-    border-radius: 10px;
+  .error-code {
+    font-size: clamp(3rem, 8vw, 5rem);
     font-weight: 700;
-    font-size: 0.92rem;
-    text-decoration: none !important;
-    transition: all 0.2s;
+    color: var(--gold, #C9A84C);
+    font-family: var(--font-mono, monospace);
+    letter-spacing: -0.04em;
+    margin-bottom: 0.5rem;
   }
-  .btn-home:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(212, 168, 67, 0.3);
+  .error-links {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
   }
-  .btn-analysis {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 255, 255, 0.8) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.92rem;
-    text-decoration: none !important;
-    transition: all 0.2s;
+  .error-link {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: color 0.15s, border-color 0.15s;
   }
-  .btn-analysis:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+  .error-link:hover {
     color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.3);
   }
 </style>

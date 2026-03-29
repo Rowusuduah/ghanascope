@@ -11,7 +11,7 @@ interface Props {
 const {
   title,
   description,
-  keywords = 'Ghana business, diaspora investment, Ghana economy, Ghana opportunities, Africa investment',
+  keywords = 'Ghana business intelligence, diaspora investment, Ghana economy, Ghana sector analysis',
   article = false,
   publishedDate,
   image = '/og-default.png',
@@ -28,13 +28,11 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- Font Preloads -->
   <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/inter-bold.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/sourceserif4-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-  <!-- Primary SEO -->
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
   <meta name="keywords" content={keywords} />
@@ -42,67 +40,52 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
   <meta name="author" content="GhanaScope" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content={article ? 'article' : 'website'} />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={new URL(image, Astro.site)} />
   <meta property="og:site_name" content="GhanaScope" />
-  <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={fullTitle} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={new URL(image, Astro.site)} />
 
   {article && publishedDate && (
     <meta property="article:published_time" content={publishedDate} />
   )}
 
-  <!-- JSON-LD Structured Data -->
-  {article ? (
-    <script type="application/ld+json" set:html={JSON.stringify({
+  <script type="application/ld+json" set:html={JSON.stringify(
+    article ? {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": title,
       "description": description,
       "datePublished": publishedDate,
-      "author": {
-        "@type": "Organization",
-        "name": "GhanaScope"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "GhanaScope",
-        "url": "https://ghanascope.com"
-      },
+      "author": { "@type": "Organization", "name": "GhanaScope" },
+      "publisher": { "@type": "Organization", "name": "GhanaScope" },
       "mainEntityOfPage": canonicalURL.toString()
-    })} />
-  ) : (
-    <script type="application/ld+json" set:html={JSON.stringify({
+    } : {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "GhanaScope",
-      "description": "Honest, data-driven Ghana business intelligence for diaspora investors and founders",
-      "url": "https://ghanascope.com"
-    })} />
-  )}
+      "description": "Ghana business intelligence for investors, founders, and policy analysts",
+      "url": Astro.site?.toString()
+    }
+  )} />
 
   <link rel="stylesheet" href="/styles/global.css" />
 </head>
 <body>
-  <nav class="nav" id="main-nav">
+  <nav class="nav">
     <div class="nav-inner">
       <a href="/" class="logo">
-        <span class="gradient-text">Ghana</span>Scope
+        <span class="logo-mark"><svg viewBox="0 0 12 12" fill="none"><path d="M6 0L12 6L6 12L0 6Z" fill="#0F1419"/></svg></span>
+        <span class="logo-text-ghana">Ghana</span>Scope
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
       <div class="nav-links" id="nav-links">
@@ -123,48 +106,33 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
     <div class="footer-inner">
       <div class="footer-col">
         <h3>GhanaScope</h3>
-        <p>Honest, evidence-grounded Ghana business intelligence. No hype. No generic Africa-rising narratives. Just truth.</p>
+        <p>Evidence-grounded business intelligence on Ghana. Built for investors, founders, and analysts who need facts, not narratives.</p>
       </div>
       <div class="footer-col">
         <h3>Analysis</h3>
-        <a href="/analysis">All Reports</a>
-        <a href="/sectors">Sector Rankings</a>
+        <a href="/analysis">Reports</a>
+        <a href="/sectors">Sectors</a>
         <a href="/scenarios">Scenarios</a>
-        <a href="/diaspora">Diaspora Guide</a>
+        <a href="/diaspora">Diaspora</a>
       </div>
       <div class="footer-col">
-        <h3>Sectors</h3>
-        <a href="/sectors">Agriculture</a>
-        <a href="/sectors">Fintech</a>
-        <a href="/sectors">Real Estate</a>
+        <h3>Platform</h3>
+        <a href="/about">About</a>
+        <a href="/about">Methodology</a>
+        <a href="/about">Editorial Standards</a>
       </div>
       <div class="footer-col">
         <h3>Connect</h3>
         <a href="https://github.com/Rowusuduah/ghanascope">GitHub</a>
-        <a href="/about">About Us</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 GhanaScope. Built by Richmond Owusu Duah.</p>
+      <span>&copy; 2026 GhanaScope</span>
+      <span>Built by Richmond Owusu Duah</span>
     </div>
   </footer>
 
   <script>
-    // Navigation: scroll-aware backdrop blur
-    const nav = document.getElementById('main-nav');
-    if (nav) {
-      const onScroll = () => {
-        if (window.scrollY > 20) {
-          nav.classList.add('scrolled');
-        } else {
-          nav.classList.remove('scrolled');
-        }
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    }
-
-    // Mobile menu toggle
     const toggle = document.querySelector('.nav-toggle');
     const links = document.getElementById('nav-links');
     if (toggle && links) {
@@ -173,8 +141,6 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
         toggle.setAttribute('aria-expanded', String(open));
       });
     }
-
-    // Scroll reveal: observe .reveal elements
     const reveals = document.querySelectorAll('.reveal');
     if (reveals.length > 0 && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
@@ -184,10 +150,7 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
             observer.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px',
-      });
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
       reveals.forEach((el) => observer.observe(el));
     }
   </script>

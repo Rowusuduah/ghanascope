@@ -16,7 +16,7 @@ const {
   credit,
   creditSource = 'Unsplash',
   creditUrl,
-  height = 480,
+  height = 440,
 } = Astro.props;
 ---
 
@@ -31,9 +31,6 @@ const {
     format="webp"
   />
   <div class="hero-image__overlay"></div>
-  <div class="hero-image__glow hero-image__glow--gold"></div>
-  <div class="hero-image__glow hero-image__glow--green"></div>
-  <div class="hero-image__noise"></div>
   <div class="hero-image__content">
     <slot />
   </div>
@@ -57,54 +54,17 @@ const {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(0.9) saturate(1.1);
   }
-
-  /* Main dark overlay */
   .hero-image__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(10, 10, 26, 0.4) 0%,
-      rgba(10, 10, 26, 0.55) 40%,
-      rgba(10, 10, 26, 0.88) 100%
+      rgba(15, 20, 25, 0.35) 0%,
+      rgba(15, 20, 25, 0.55) 50%,
+      rgba(15, 20, 25, 0.85) 100%
     );
   }
-
-  /* Subtle colored glow orbs */
-  .hero-image__glow {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-    mix-blend-mode: soft-light;
-  }
-  .hero-image__glow--gold {
-    bottom: -20%;
-    left: -10%;
-    width: 60%;
-    height: 80%;
-    background: radial-gradient(ellipse at center, rgba(212, 168, 67, 0.2) 0%, transparent 65%);
-  }
-  .hero-image__glow--green {
-    top: -30%;
-    right: -15%;
-    width: 50%;
-    height: 70%;
-    background: radial-gradient(ellipse at center, rgba(0, 107, 63, 0.12) 0%, transparent 65%);
-  }
-
-  /* Noise texture */
-  .hero-image__noise {
-    position: absolute;
-    inset: 0;
-    opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 128px 128px;
-    pointer-events: none;
-  }
-
   .hero-image__content {
     position: absolute;
     inset: 0;
@@ -112,38 +72,30 @@ const {
     flex-direction: column;
     justify-content: flex-end;
     padding: 3rem 2rem;
-    max-width: 1140px;
+    max-width: 1080px;
     margin: 0 auto;
     left: 0;
     right: 0;
     color: white;
   }
-
   .hero-image__credit {
     position: absolute;
     bottom: 0.75rem;
     right: 1rem;
     font-size: 0.68rem;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.3);
     letter-spacing: 0.02em;
   }
   .hero-image__credit a {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.4);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
-
   @media (max-width: 768px) {
-    .hero-image {
-      height: 400px;
-    }
-    .hero-image__content {
-      padding: 2rem 1.25rem;
-    }
+    .hero-image { height: 380px; }
+    .hero-image__content { padding: 2rem 1.25rem; }
   }
   @media (max-width: 480px) {
-    .hero-image {
-      height: 360px;
-    }
+    .hero-image { height: 340px; }
   }
 </style>

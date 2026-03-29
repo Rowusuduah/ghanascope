@@ -1,8 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import HeroImage from '../components/HeroImage.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
-import aboutHero from '../assets/images/heroes/about-ghana.jpg';
 ---
 
 <Base
@@ -10,84 +8,113 @@ import aboutHero from '../assets/images/heroes/about-ghana.jpg';
   description="GhanaScope provides honest, evidence-grounded Ghana business intelligence for diaspora investors and founders. Built by Richmond Owusu Duah."
   keywords="about GhanaScope, Ghana business intelligence, Richmond Owusu Duah, diaspora investment platform"
 >
-  <HeroImage
-    image={aboutHero}
-    alt="Ghana, the country at the heart of our intelligence mission"
-    credit="Unsplash"
-    creditSource="Unsplash"
-    height={380}
-  >
-    <span class="hero-tag">Our Mission</span>
-    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.1;margin-bottom:0.5rem;letter-spacing:-1px;">About <span class="gradient-text">GhanaScope</span></h1>
-    <p style="font-size:1.05rem;color:rgba(255,255,255,0.6);">Honest intelligence for real decisions</p>
-  </HeroImage>
-
-  <div class="article-body" style="max-width:780px;margin:2.5rem auto;padding:0 1.5rem;">
-    <h2 class="reveal">Why GhanaScope Exists</h2>
-
-    <div class="reveal">
-      <p>Every diaspora investor considering Ghana faces the same problem: <strong>nobody tells you what actually fails.</strong></p>
-
-      <p>Consultants sell optimism. Government agencies market opportunity. LinkedIn is full of "Ghana is rising" posts. But when you send $30,000 to start a business, nobody warned you about:</p>
-
-      <ul>
-        <li>The GIPC capital requirement that locks you out of formal registration</li>
-        <li>The local partner who disappears with your investment</li>
-        <li>The infrastructure gap that doubles your operating costs</li>
-        <li>The policy change that invalidates your business model overnight</li>
-        <li>The cedi depreciation that erases your margins</li>
-      </ul>
-
-      <p>GhanaScope was built to fix this. We provide <strong>honest, evidence-grounded, continuously updated</strong> intelligence on Ghana's business environment. We tell you what works, what fails, and why, with data, not optimism.</p>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Our Mission</div>
+      <h1>About GhanaScope</h1>
+      <p>Honest intelligence for real decisions</p>
     </div>
+  </div>
 
-    <h2 class="reveal">How We Work</h2>
+  <div class="container">
+    <div class="about-content">
+      <div class="section reveal">
+        <div class="section-header">
+          <div class="section-title">Why GhanaScope Exists</div>
+        </div>
 
-    <div class="reveal">
-      <p>GhanaScope is powered by <strong>GhanaWorld</strong>, a multi-agent intelligence system that has run 40+ analytical cycles across Ghana's economy. Each cycle:</p>
+        <div class="article-body">
+          <p>Every diaspora investor considering Ghana faces the same problem: <strong>nobody tells you what actually fails.</strong></p>
 
-      <ul>
-        <li>Ingests fresh economic data (GDP, inflation, exchange rates, policy changes)</li>
-        <li>Runs sector analysis across agriculture, fintech, real estate, manufacturing, and more</li>
-        <li>Scores opportunities with weighted criteria (market size, infrastructure viability, execution feasibility, currency risk, diaspora fit)</li>
-        <li>Identifies failure patterns and risk cascades</li>
-        <li>Tracks known unknowns: the questions we can't yet answer</li>
-      </ul>
+          <p>Consultants sell optimism. Government agencies market opportunity. LinkedIn is full of "Ghana is rising" posts. But when you send $30,000 to start a business, nobody warned you about:</p>
 
-      <p>Every analysis goes through an enforcement process that checks for hallucination, unsupported optimism, omitted risks, and false completeness. If we don't have the data, we say so. If the picture is unclear, we say so.</p>
-    </div>
+          <ul>
+            <li>The GIPC capital requirement that locks you out of formal registration</li>
+            <li>The local partner who disappears with your investment</li>
+            <li>The infrastructure gap that doubles your operating costs</li>
+            <li>The policy change that invalidates your business model overnight</li>
+            <li>The cedi depreciation that erases your margins</li>
+          </ul>
 
-    <h2 class="reveal">Who This Is For</h2>
+          <p>GhanaScope was built to fix this. We provide <strong>honest, evidence-grounded, continuously updated</strong> intelligence on Ghana's business environment. We tell you what works, what fails, and why, with data, not optimism.</p>
+        </div>
+      </div>
 
-    <div class="reveal">
-      <ul>
-        <li><strong>Diaspora founders</strong> considering starting a business in Ghana</li>
-        <li><strong>Diaspora investors</strong> evaluating Ghana-based opportunities</li>
-        <li><strong>Development finance institutions</strong> assessing Ghana's sectors</li>
-        <li><strong>Researchers and analysts</strong> studying Ghana's political economy</li>
-        <li><strong>Anyone</strong> who needs honest Ghana intelligence over comfortable narratives</li>
-      </ul>
-    </div>
+      <div class="section reveal">
+        <div class="section-header">
+          <div class="section-title">How We Work</div>
+        </div>
 
-    <h2 class="reveal">Built By</h2>
+        <div class="article-body">
+          <p>GhanaScope is powered by <strong>GhanaWorld</strong>, a multi-agent intelligence system that has run 40+ analytical cycles across Ghana's economy. Each cycle:</p>
 
-    <div class="reveal">
-      <p><strong>Richmond Owusu Duah</strong>, software engineer and builder focused on Ghana's economic intelligence infrastructure. Based in the diaspora. Building tools that make real information accessible to real people making real decisions.</p>
+          <ul>
+            <li>Ingests fresh economic data (GDP, inflation, exchange rates, policy changes)</li>
+            <li>Runs sector analysis across agriculture, fintech, real estate, manufacturing, and more</li>
+            <li>Scores opportunities with weighted criteria (market size, infrastructure viability, execution feasibility, currency risk, diaspora fit)</li>
+            <li>Identifies failure patterns and risk cascades</li>
+            <li>Tracks known unknowns: the questions we cannot yet answer</li>
+          </ul>
 
-      <p>Contact: <a href="https://github.com/Rowusuduah">GitHub</a></p>
+          <p>Every analysis goes through an enforcement process that checks for hallucination, unsupported optimism, omitted risks, and false completeness. If we do not have the data, we say so. If the picture is unclear, we say so.</p>
+        </div>
+      </div>
 
-      <div class="data-box">
-        <h4>Our Principles</h4>
-        <ul>
-          <li><strong>No hallucinated data.</strong> Every claim is traceable to a source.</li>
-          <li><strong>No suppressed risk.</strong> Every opportunity analysis includes what kills it.</li>
-          <li><strong>No false completeness.</strong> If we don't know, we say so.</li>
-          <li><strong>No generic Africa frameworks.</strong> Every analysis is Ghana-specific.</li>
-          <li><strong>No political endorsement.</strong> Analysis is structural, not partisan.</li>
-        </ul>
+      <div class="section reveal">
+        <div class="section-header">
+          <div class="section-title">Who This Is For</div>
+        </div>
+
+        <div class="card-grid cols-2">
+          <div class="grid-card">
+            <h3>Diaspora Founders</h3>
+            <p>Considering starting a business in Ghana. Need honest risk assessment, execution barriers, and remote-viability analysis.</p>
+          </div>
+          <div class="grid-card">
+            <h3>Diaspora Investors</h3>
+            <p>Evaluating Ghana-based opportunities from abroad. Need structured data, scenario models, and stated confidence levels.</p>
+          </div>
+          <div class="grid-card">
+            <h3>Institutional Analysts</h3>
+            <p>DFIs, PE/VC, research teams assessing Ghana's sectors. Need sector intelligence with evidence grounding.</p>
+          </div>
+          <div class="grid-card">
+            <h3>Policy Professionals</h3>
+            <p>Tracking Ghana's regulatory and macroeconomic environment. Need impact analysis, not press release summaries.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section reveal">
+        <div class="section-header">
+          <div class="section-title">Built By</div>
+        </div>
+
+        <div class="article-body">
+          <p><strong>Richmond Owusu Duah</strong>, software engineer and builder focused on Ghana's economic intelligence infrastructure. Based in the diaspora. Building tools that make real information accessible to real people making real decisions.</p>
+
+          <p>Contact: <a href="https://github.com/Rowusuduah">GitHub</a></p>
+        </div>
+
+        <div class="data-box" style="margin-top:1.5rem;">
+          <h4>Our Principles</h4>
+          <ul>
+            <li><strong>No hallucinated data.</strong> Every claim is traceable to a source.</li>
+            <li><strong>No suppressed risk.</strong> Every opportunity analysis includes what kills it.</li>
+            <li><strong>No false completeness.</strong> If we do not know, we say so.</li>
+            <li><strong>No generic Africa frameworks.</strong> Every analysis is Ghana-specific.</li>
+            <li><strong>No political endorsement.</strong> Analysis is structural, not partisan.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
   <NewsletterSignup />
 </Base>
+
+<style>
+  .about-content {
+    max-width: 720px;
+  }
+</style>

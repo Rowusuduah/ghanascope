@@ -14,7 +14,6 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
   <div class="audience-grid">
     <div class="audience-card audience-ghanaians">
       <div class="audience-card__header">
-        <div class="audience-card__dot"></div>
         <h3>For Ghanaians</h3>
       </div>
       <div class="audience-card__body" set:html={ghanaians} />
@@ -22,7 +21,6 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
 
     <div class="audience-card audience-investors">
       <div class="audience-card__header">
-        <div class="audience-card__dot"></div>
         <h3>For Investors</h3>
       </div>
       <div class="audience-card__body" set:html={investors} />
@@ -30,7 +28,6 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
 
     <div class="audience-card audience-diaspora">
       <div class="audience-card__header">
-        <div class="audience-card__dot"></div>
         <h3>For the Diaspora</h3>
       </div>
       <div class="audience-card__body" set:html={diaspora} />
@@ -38,7 +35,6 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
 
     <div class="audience-card audience-entrepreneurs">
       <div class="audience-card__header">
-        <div class="audience-card__dot"></div>
         <h3>For Entrepreneurs</h3>
       </div>
       <div class="audience-card__body" set:html={entrepreneurs} />
@@ -48,99 +44,64 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
 
 <style>
   .audience-breakdown {
-    max-width: 1140px;
+    max-width: var(--max-width, 1080px);
     margin: 2.5rem auto;
     padding: 0 1.5rem;
   }
   .audience-breakdown h2 {
-    font-size: 1.5rem;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 1.35rem;
     font-weight: 700;
-    color: #1a1a2e;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.3px;
+    color: var(--ink, #0F1419);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
   }
   .audience-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    gap: 1px;
+    background: var(--border, #E4E7EC);
+    border: 1px solid var(--border, #E4E7EC);
   }
   .audience-card {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    border-radius: 12px;
+    background: var(--bg, #ffffff);
     padding: 1.5rem;
-    border-left: 3px solid #e5e7eb;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
+    border-left: 3px solid var(--border, #E4E7EC);
   }
-  .audience-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-  }
-  .audience-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    transform: translateY(-2px);
-  }
-  .audience-card:hover::before { opacity: 1; }
-
-  .audience-ghanaians { border-left-color: #006B3F; }
-  .audience-ghanaians::before { background: radial-gradient(ellipse at top left, rgba(0, 107, 63, 0.03) 0%, transparent 60%); }
-  .audience-investors { border-left-color: #D4A843; }
-  .audience-investors::before { background: radial-gradient(ellipse at top left, rgba(212, 168, 67, 0.03) 0%, transparent 60%); }
-  .audience-diaspora { border-left-color: #2563EB; }
-  .audience-diaspora::before { background: radial-gradient(ellipse at top left, rgba(37, 99, 235, 0.03) 0%, transparent 60%); }
-  .audience-entrepreneurs { border-left-color: #CE1126; }
-  .audience-entrepreneurs::before { background: radial-gradient(ellipse at top left, rgba(206, 17, 38, 0.03) 0%, transparent 60%); }
-
-  .audience-card__header {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 0.75rem;
-  }
-  .audience-card__dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .audience-ghanaians .audience-card__dot { background: #006B3F; }
-  .audience-investors .audience-card__dot { background: #D4A843; }
-  .audience-diaspora .audience-card__dot { background: #2563EB; }
-  .audience-entrepreneurs .audience-card__dot { background: #CE1126; }
+  .audience-ghanaians { border-left-color: var(--green, #2E7D32); }
+  .audience-investors { border-left-color: var(--gold, #C9A84C); }
+  .audience-diaspora { border-left-color: var(--blue, #1565C0); }
+  .audience-entrepreneurs { border-left-color: var(--red, #C62828); }
 
   .audience-card__header h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1a1a2e;
-    margin: 0;
-    letter-spacing: -0.1px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 0.6rem;
   }
+  .audience-ghanaians h3 { color: var(--green, #2E7D32); }
+  .audience-investors h3 { color: var(--gold, #C9A84C); }
+  .audience-diaspora h3 { color: var(--blue, #1565C0); }
+  .audience-entrepreneurs h3 { color: var(--red, #C62828); }
+
   .audience-card__body {
-    font-size: 0.92rem;
-    color: #4b5563;
-    line-height: 1.65;
+    font-size: 0.88rem;
+    color: var(--text-secondary, #475467);
+    line-height: 1.6;
   }
   .audience-card__body :global(p) {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
   .audience-card__body :global(strong) {
-    color: #1a1a2e;
+    color: var(--ink, #0F1419);
   }
   .audience-card__body :global(ul) {
     padding-left: 1.2rem;
     margin-top: 0.5rem;
   }
   .audience-card__body :global(li) {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
   }
   @media (max-width: 768px) {
     .audience-grid {

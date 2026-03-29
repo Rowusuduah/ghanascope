@@ -1,7 +1,5 @@
 ---
 import Base from '../../layouts/Base.astro';
-import HeroImage from '../../components/HeroImage.astro';
-import analysisHero from '../../assets/images/heroes/analysis-index.jpg';
 ---
 
 <Base
@@ -9,68 +7,71 @@ import analysisHero from '../../assets/images/heroes/analysis-index.jpg';
   description="In-depth Ghana business analysis for investors and diaspora founders. Sector rankings, risk alerts, policy tracking, and opportunity scoring. Updated continuously."
   keywords="Ghana economic analysis, Ghana business report, Ghana investment analysis, Ghana sector report 2026, Ghana risk assessment, diaspora investment guide"
 >
-  <HeroImage
-    image={analysisHero}
-    alt="Ghana commerce and trade, the foundation of economic analysis"
-    credit="Julie Blake Edison"
-    creditSource="Unsplash"
-    height={400}
-  >
-    <span class="hero-tag">Evidence-Grounded</span>
-    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.1;margin-bottom:0.5rem;letter-spacing:-1px;">Ghana Business <span class="gradient-text">Analysis</span></h1>
-    <p style="font-size:1.05rem;color:rgba(255,255,255,0.6);max-width:600px;">Ground-truth reporting powered by GhanaWorld v3.0. 25 agents, real-time web research, no hype.</p>
-  </HeroImage>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">Evidence-Grounded</div>
+      <h1>Ghana Business Analysis</h1>
+      <p>Ground-truth reporting powered by GhanaWorld v3.0. 25 agents, real-time web research, no hype.</p>
+    </div>
+  </div>
 
   <div class="container">
-    <div class="section-header reveal">
-      <h2>Published Reports</h2>
-    </div>
-
-    <div class="card-grid reveal">
-      <a href="/analysis/hormuz-crisis-ghana-2026" class="card" style="text-decoration:none;color:inherit">
-        <span class="card-tag risk">Risk Alert</span>
-        <h3>Hormuz Crisis: How $114 Oil Reaches a Ghanaian Market Stall</h3>
-        <p>Diesel up 25.7% in one NPA window. Four transmission channels traced with real pricing data. Sector-by-sector impact. What to watch next.</p>
-        <div class="card-meta">
-          <span>March 28, 2026</span>
-          <span>Macro and Global</span>
-          <span>12 min read</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="section-divider"></div>
-
-    <div class="section-header reveal">
-      <h2>In the Pipeline</h2>
-      <p>Articles advancing through the 8-stage publishing pipeline with 3 mandatory quality gates.</p>
-    </div>
-
-    <div class="card-grid">
-      <div class="card coming-soon reveal reveal-delay-1">
-        <span class="card-tag risk">Risk Alert</span>
-        <h3>GSE Crash: 73% Rally to 18% Weekly Drop</h3>
-        <p>Historic highs to sharp correction. Is 12,990 the floor or a waypoint? Volume analysis and scenario modeling.</p>
-        <div class="card-meta">
-          <span class="pipeline-badge">Stage 4</span>
-        </div>
+    <div class="section reveal">
+      <div class="section-header">
+        <div class="section-label">Published</div>
+        <div class="section-title">Reports</div>
       </div>
 
-      <div class="card coming-soon reveal reveal-delay-2">
-        <span class="card-tag policy">Policy Analysis</span>
-        <h3>BoG Rate Cut to 14%: What the Split Vote Means</h3>
-        <p>The 3-1-1 vote reveals the tension between easing and Hormuz risk. May MPC is the critical decision point.</p>
-        <div class="card-meta">
-          <span class="pipeline-badge">Stage 1</span>
-        </div>
+      <div class="card-grid">
+        <a href="/analysis/hormuz-crisis-ghana-2026" class="article-card">
+          <span class="card-tag risk">Risk Alert</span>
+          <h3>Hormuz Crisis: How $114 Oil Reaches a Ghanaian Market Stall</h3>
+          <p>Diesel up 25.7% in one NPA window. Four transmission channels traced with real pricing data. Sector-by-sector impact. What to watch next.</p>
+          <div class="card-meta">
+            <span>March 28, 2026</span>
+            <span>Macro and Global</span>
+            <span>12 min read</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="section reveal">
+      <div class="section-header">
+        <div class="section-label">In Development</div>
+        <div class="section-title">Pipeline</div>
+        <div class="section-desc">Articles advancing through the 8-stage publishing pipeline with 3 mandatory quality gates.</div>
       </div>
 
-      <div class="card coming-soon reveal reveal-delay-3">
-        <span class="card-tag scenario">Scenario Analysis</span>
-        <h3>Ghana's Triple Shock: Three Scenarios for 2026</h3>
-        <p>Hormuz, cocoa, and GSE hit simultaneously. Base case, upside, downside, and wildcard with probability estimates.</p>
-        <div class="card-meta">
-          <span class="pipeline-badge">Stage 1</span>
+      <div class="card-grid">
+        <div class="article-card" style="opacity:0.65;">
+          <span class="card-tag risk">Risk Alert</span>
+          <h3>GSE Crash: 73% Rally to 18% Weekly Drop</h3>
+          <p>Historic highs to sharp correction. Is 12,990 the floor or a waypoint? Volume analysis and scenario modeling.</p>
+          <div class="card-meta">
+            <span class="status-badge">Stage 4 of 8</span>
+            <span>Capital Markets</span>
+          </div>
+        </div>
+
+        <div class="article-card" style="opacity:0.65;">
+          <span class="card-tag policy">Policy Analysis</span>
+          <h3>BoG Rate Cut to 14%: What the Split Vote Means</h3>
+          <p>The 3-1-1 vote reveals the tension between easing and Hormuz risk. May MPC is the critical decision point.</p>
+          <div class="card-meta">
+            <span class="status-badge">Stage 1 of 8</span>
+            <span>Monetary Policy</span>
+          </div>
+        </div>
+
+        <div class="article-card" style="opacity:0.65;">
+          <span class="card-tag scenario">Scenario Analysis</span>
+          <h3>Ghana's Triple Shock: Three Scenarios for 2026</h3>
+          <p>Hormuz, cocoa, and GSE hit simultaneously. Base case, upside, downside, and wildcard with probability estimates.</p>
+          <div class="card-meta">
+            <span class="status-badge">Stage 1 of 8</span>
+            <span>Macro Scenario</span>
+          </div>
         </div>
       </div>
     </div>
