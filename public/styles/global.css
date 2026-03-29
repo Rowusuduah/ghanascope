@@ -208,21 +208,29 @@ img { max-width: 100%; height: auto; display: block; }
   border-bottom: 1px solid var(--dark-border);
 }
 
-.hero--home {
+.hero--bg {
   position: relative;
-  background: url('/images/homepage-accra.jpg') center center / cover no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   padding: 6rem 1.5rem 5rem;
 }
-.hero--home::before {
+.hero--bg::before {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(15, 20, 25, 0.75);
 }
-.hero--home .hero-inner {
+.hero--bg .hero-inner {
   position: relative;
   z-index: 1;
 }
+.hero--home       { background-image: url('/images/homepage-accra.jpg'); }
+.hero--analysis   { background-image: url('/images/analysis-index.jpg'); }
+.hero--sectors    { background-image: url('/images/sectors-index.jpg'); }
+.hero--diaspora   { background-image: url('/images/diaspora-index.jpg'); }
+.hero--scenarios  { background-image: url('/images/scenarios-index.jpg'); }
+.hero--about      { background-image: url('/images/about-ghana.jpg'); }
 
 .hero-inner {
   max-width: 720px;
