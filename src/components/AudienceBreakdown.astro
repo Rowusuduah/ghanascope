@@ -1,0 +1,127 @@
+---
+interface Props {
+  ghanaians: string;
+  investors: string;
+  diaspora: string;
+  entrepreneurs: string;
+}
+
+const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
+---
+
+<section class="audience-breakdown" id="what-this-means">
+  <h2>What This Means for You</h2>
+  <div class="audience-grid">
+    <div class="audience-card audience-ghanaians">
+      <div class="audience-card__header">
+        <span class="audience-card__icon">🇬🇭</span>
+        <h3>For Ghanaians</h3>
+      </div>
+      <div class="audience-card__body" set:html={ghanaians} />
+    </div>
+
+    <div class="audience-card audience-investors">
+      <div class="audience-card__header">
+        <span class="audience-card__icon">📊</span>
+        <h3>For Investors</h3>
+      </div>
+      <div class="audience-card__body" set:html={investors} />
+    </div>
+
+    <div class="audience-card audience-diaspora">
+      <div class="audience-card__header">
+        <span class="audience-card__icon">🌍</span>
+        <h3>For the Diaspora</h3>
+      </div>
+      <div class="audience-card__body" set:html={diaspora} />
+    </div>
+
+    <div class="audience-card audience-entrepreneurs">
+      <div class="audience-card__header">
+        <span class="audience-card__icon">🚀</span>
+        <h3>For Entrepreneurs</h3>
+      </div>
+      <div class="audience-card__body" set:html={entrepreneurs} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .audience-breakdown {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+  }
+  .audience-breakdown h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 1.5rem;
+  }
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .audience-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #e5e7eb;
+    transition: box-shadow 0.2s;
+  }
+  .audience-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+  .audience-ghanaians {
+    border-left-color: #006B3F;
+  }
+  .audience-investors {
+    border-left-color: #D4A843;
+  }
+  .audience-diaspora {
+    border-left-color: #2563EB;
+  }
+  .audience-entrepreneurs {
+    border-left-color: #CE1126;
+  }
+  .audience-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .audience-card__icon {
+    font-size: 1.3rem;
+  }
+  .audience-card__header h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0;
+  }
+  .audience-card__body {
+    font-size: 0.92rem;
+    color: #2d2d2d;
+    line-height: 1.65;
+  }
+  .audience-card__body :global(p) {
+    margin-bottom: 0.6rem;
+  }
+  .audience-card__body :global(strong) {
+    color: #1a1a2e;
+  }
+  .audience-card__body :global(ul) {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  .audience-card__body :global(li) {
+    margin-bottom: 0.3rem;
+  }
+  @media (max-width: 768px) {
+    .audience-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

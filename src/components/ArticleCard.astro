@@ -1,0 +1,109 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  tag?: string;
+  tagType?: 'risk' | 'policy' | 'opportunity' | 'guide';
+  date?: string;
+  sector?: string;
+  confidence?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  readingTime?: number;
+}
+
+const {
+  href,
+  title,
+  description,
+  tag,
+  tagType = 'opportunity',
+  date,
+  sector,
+  confidence,
+  image,
+  imageAlt = '',
+  readingTime,
+} = Astro.props;
+
+const tagClass = tagType === 'risk' ? 'card-tag risk' : tagType === 'policy' ? 'card-tag policy' : 'card-tag';
+---
+
+<a href={href} class="article-card" style="text-decoration:none;color:inherit">
+  {image && (
+    <div class="article-card__image">
+      <Image src={image} alt={imageAlt} width={640} height={360} format="webp" class="article-card__img" loading="lazy" />
+    </div>
+  )}
+  <div class="article-card__body">
+    {tag && <span class={tagClass}>{tag}</span>}
+    <h3 class="article-card__title">{title}</h3>
+    <p class="article-card__desc">{description}</p>
+    <div class="article-card__meta">
+      {date && <span>{date}</span>}
+      {sector && <span>{sector}</span>}
+      {confidence && <span>Confidence: {confidence}</span>}
+      {readingTime && <span>{readingTime} min read</span>}
+    </div>
+  </div>
+</a>
+
+<style>
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .article-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+  .article-card__image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  .article-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .article-card:hover .article-card__img {
+    transform: scale(1.03);
+  }
+  .article-card__body {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .article-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+    color: #1a1a2e;
+  }
+  .article-card__desc {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    flex: 1;
+  }
+  .article-card__meta {
+    font-size: 0.78rem;
+    color: #9ca3af;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+</style>

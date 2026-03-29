@@ -1,0 +1,136 @@
+---
+interface Scenario {
+  name: string;
+  probability: string;
+  description: string;
+  indicators: string[];
+  type: 'base' | 'upside' | 'downside' | 'wildcard';
+}
+
+interface Props {
+  title: string;
+  scenarios: Scenario[];
+}
+
+const { title, scenarios } = Astro.props;
+
+const typeColors: Record<string, string> = {
+  base: '#6b7280',
+  upside: '#006B3F',
+  downside: '#CE1126',
+  wildcard: '#D4A843',
+};
+
+const typeLabels: Record<string, string> = {
+  base: 'Base Case',
+  upside: 'Upside',
+  downside: 'Downside',
+  wildcard: 'Wildcard',
+};
+---
+
+<div class="scenario-table">
+  <h3 class="scenario-table__title">{title}</h3>
+  <div class="scenario-table__grid">
+    {scenarios.map((s) => (
+      <div class="scenario-card" style={`border-top-color: ${typeColors[s.type]}`}>
+        <div class="scenario-card__header">
+          <span class="scenario-card__type" style={`background: ${typeColors[s.type]}`}>
+            {typeLabels[s.type]}
+          </span>
+          <span class="scenario-card__prob">{s.probability}</span>
+        </div>
+        <h4 class="scenario-card__name">{s.name}</h4>
+        <p class="scenario-card__desc">{s.description}</p>
+        {s.indicators.length > 0 && (
+          <div class="scenario-card__indicators">
+            <strong>Watch for:</strong>
+            <ul>
+              {s.indicators.map((ind) => (
+                <li>{ind}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .scenario-table {
+    margin: 2rem 0;
+  }
+  .scenario-table__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+  .scenario-table__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .scenario-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-top: 4px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .scenario-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .scenario-card__type {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+  .scenario-card__prob {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+  .scenario-card__name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.5rem;
+  }
+  .scenario-card__desc {
+    font-size: 0.88rem;
+    color: #2d2d2d;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .scenario-card__indicators {
+    font-size: 0.82rem;
+    color: #6b7280;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 0.6rem;
+  }
+  .scenario-card__indicators strong {
+    color: #1a1a2e;
+  }
+  .scenario-card__indicators ul {
+    padding-left: 1.1rem;
+    margin-top: 0.3rem;
+  }
+  .scenario-card__indicators li {
+    margin-bottom: 0.2rem;
+  }
+  @media (max-width: 768px) {
+    .scenario-table__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

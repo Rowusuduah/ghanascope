@@ -1,0 +1,77 @@
+---
+interface RelatedItem {
+  href: string;
+  title: string;
+  description: string;
+  tag?: string;
+  tagType?: 'risk' | 'policy' | 'opportunity' | 'guide';
+}
+
+interface Props {
+  articles: RelatedItem[];
+}
+
+const { articles } = Astro.props;
+---
+
+{articles.length > 0 && (
+  <section class="related">
+    <h3 class="related__title">Continue Reading</h3>
+    <div class="related__grid">
+      {articles.map((a) => {
+        const tagClass = a.tagType === 'risk' ? 'card-tag risk' : a.tagType === 'policy' ? 'card-tag policy' : 'card-tag';
+        return (
+          <a href={a.href} class="related__card" style="text-decoration:none;color:inherit">
+            {a.tag && <span class={tagClass}>{a.tag}</span>}
+            <h4>{a.title}</h4>
+            <p>{a.description}</p>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+)}
+
+<style>
+  .related {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 0;
+  }
+  .related__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+  .related__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  .related__card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: box-shadow 0.2s;
+  }
+  .related__card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  .related__card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+    color: #1a1a2e;
+  }
+  .related__card p {
+    font-size: 0.88rem;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+  @media (max-width: 768px) {
+    .related__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

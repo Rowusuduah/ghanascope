@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+  credit?: string;
+  creditSource?: string;
+  creditUrl?: string;
+  height?: number;
+}
+
+const {
+  image,
+  alt,
+  credit,
+  creditSource = 'Unsplash',
+  creditUrl,
+  height = 480,
+} = Astro.props;
+---
+
+<div class="hero-image" style={`--hero-height: ${height}px`}>
+  <Image
+    src={image}
+    alt={alt}
+    width={1600}
+    height={height}
+    class="hero-image__img"
+    loading="eager"
+    format="webp"
+  />
+  <div class="hero-image__overlay"></div>
+  <div class="hero-image__content">
+    <slot />
+  </div>
+  {credit && (
+    <div class="hero-image__credit">
+      Photo by {creditUrl ? <a href={creditUrl} target="_blank" rel="noopener">{credit}</a> : credit}
+      {creditSource && <span> on {creditSource}</span>}
+    </div>
+  )}
+</div>
+
+<style>
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: var(--hero-height);
+    overflow: hidden;
+  }
+  .hero-image__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-image__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 46, 0.55) 0%,
+      rgba(26, 26, 46, 0.85) 100%
+    );
+  }
+  .hero-image__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    color: white;
+  }
+  .hero-image__credit {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .hero-image__credit a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .hero-image {
+      height: 360px;
+    }
+    .hero-image__content {
+      padding: 1.5rem 1rem;
+    }
+  }
+</style>

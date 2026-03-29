@@ -1,0 +1,116 @@
+---
+---
+
+<section class="newsletter">
+  <div class="newsletter__inner">
+    <h3 class="newsletter__title">Stay Informed on Ghana</h3>
+    <p class="newsletter__desc">Get honest Ghana business intelligence delivered to your inbox. No hype. No spam. Just evidence.</p>
+    <form class="newsletter__form" id="newsletter-form">
+      <input
+        type="email"
+        name="email"
+        placeholder="your@email.com"
+        required
+        class="newsletter__input"
+        aria-label="Email address"
+      />
+      <button type="submit" class="newsletter__btn">Subscribe</button>
+    </form>
+    <p class="newsletter__note" id="newsletter-status">Free. Unsubscribe anytime. We respect your inbox.</p>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('newsletter-form');
+  const status = document.getElementById('newsletter-status');
+  if (form && status) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = form.querySelector('input[name="email"]') as HTMLInputElement;
+      const email = input?.value;
+      if (!email) return;
+      const subscribers = JSON.parse(localStorage.getItem('ghanascope_subscribers') || '[]');
+      if (subscribers.includes(email)) {
+        status.textContent = 'You are already subscribed. Thank you!';
+        status.style.color = '#D4A843';
+        return;
+      }
+      subscribers.push(email);
+      localStorage.setItem('ghanascope_subscribers', JSON.stringify(subscribers));
+      status.textContent = 'Subscribed! We will notify you when email delivery is live.';
+      status.style.color = '#22c55e';
+      input.value = '';
+    });
+  }
+</script>
+
+<style>
+  .newsletter {
+    background: #1a1a2e;
+    padding: 3rem 1.5rem;
+    margin-top: 3rem;
+  }
+  .newsletter__inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .newsletter__title {
+    color: #D4A843;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .newsletter__desc {
+    color: #9ca3af;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  .newsletter__form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 440px;
+    margin: 0 auto 0.75rem;
+  }
+  .newsletter__input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background: #16213e;
+    color: white;
+    font-size: 0.95rem;
+  }
+  .newsletter__input::placeholder {
+    color: #6b7280;
+  }
+  .newsletter__input:focus {
+    outline: none;
+    border-color: #D4A843;
+  }
+  .newsletter__btn {
+    padding: 0.75rem 1.5rem;
+    background: #D4A843;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .newsletter__btn:hover {
+    background: #c49a3a;
+  }
+  .newsletter__note {
+    color: #4b5563;
+    font-size: 0.75rem;
+  }
+  @media (max-width: 480px) {
+    .newsletter__form {
+      flex-direction: column;
+    }
+  }
+</style>

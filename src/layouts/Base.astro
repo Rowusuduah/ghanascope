@@ -28,6 +28,12 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+  <!-- Font Preloads -->
+  <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/sourceserif4-latin.woff2" as="font" type="font/woff2" crossorigin />
+
   <!-- Primary SEO -->
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
@@ -90,10 +96,17 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
   <nav class="nav">
     <div class="nav-inner">
       <a href="/" class="logo">GhanaScope</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
       <div class="nav-links">
         <a href="/analysis">Analysis</a>
         <a href="/sectors">Sectors</a>
-        <a href="/risks">Risk Watch</a>
+        <a href="/scenarios">Scenarios</a>
         <a href="/diaspora">Diaspora Guide</a>
         <a href="/about">About</a>
       </div>
@@ -114,15 +127,14 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
         <h3>Analysis</h3>
         <a href="/analysis">All Reports</a>
         <a href="/sectors">Sector Rankings</a>
-        <a href="/risks">Risk Watch</a>
+        <a href="/scenarios">Scenarios</a>
         <a href="/diaspora">Diaspora Guide</a>
       </div>
       <div class="footer-col">
-        <h3>Topics</h3>
-        <a href="/topics/gdp">GDP & Growth</a>
-        <a href="/topics/cedi">Cedi & Currency</a>
-        <a href="/topics/infrastructure">Infrastructure</a>
-        <a href="/topics/policy">Policy & Regulation</a>
+        <h3>Sectors</h3>
+        <a href="/sectors/agriculture">Agriculture</a>
+        <a href="/sectors/fintech">Fintech</a>
+        <a href="/sectors/real-estate">Real Estate</a>
       </div>
       <div class="footer-col">
         <h3>Connect</h3>
@@ -134,5 +146,16 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
       <p>&copy; 2026 GhanaScope. Built by Richmond Owusu Duah.</p>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+  </script>
 </body>
 </html>

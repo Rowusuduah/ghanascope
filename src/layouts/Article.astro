@@ -1,0 +1,182 @@
+---
+import Base from './Base.astro';
+import HeroImage from '../components/HeroImage.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorCard from '../components/AuthorCard.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import SocialShare from '../components/SocialShare.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+
+interface Heading {
+  text: string;
+  id: string;
+}
+
+interface RelatedItem {
+  href: string;
+  title: string;
+  description: string;
+  tag?: string;
+  tagType?: 'risk' | 'policy' | 'opportunity' | 'guide' | 'scenario' | 'data';
+}
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  publishedDate: string;
+  heroImage: ImageMetadata;
+  heroAlt: string;
+  heroCredit?: string;
+  heroCreditSource?: string;
+  heroCreditUrl?: string;
+  tag?: string;
+  tagType?: 'risk' | 'policy' | 'opportunity' | 'guide' | 'scenario' | 'data';
+  section?: { label: string; href: string };
+  headings?: Heading[];
+  relatedArticles?: RelatedItem[];
+  wordCount?: number;
+  confidence?: string;
+  source?: string;
+}
+
+const {
+  title,
+  description,
+  keywords,
+  publishedDate,
+  heroImage,
+  heroAlt,
+  heroCredit,
+  heroCreditSource,
+  heroCreditUrl,
+  tag,
+  tagType = 'opportunity',
+  section = { label: 'Analysis', href: '/analysis' },
+  headings = [],
+  relatedArticles = [],
+  wordCount = 1500,
+  confidence,
+  source,
+} = Astro.props;
+
+const tagClass = tagType === 'risk'
+  ? 'article-tag article-tag--risk'
+  : tagType === 'policy'
+  ? 'article-tag article-tag--policy'
+  : 'article-tag';
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<Base
+  title={title}
+  description={description}
+  keywords={keywords}
+  article={true}
+  publishedDate={publishedDate}
+>
+  <Breadcrumbs items={[
+    { label: 'Home', href: '/' },
+    { label: section.label, href: section.href },
+    { label: title },
+  ]} />
+
+  <HeroImage
+    image={heroImage}
+    alt={heroAlt}
+    credit={heroCredit}
+    creditSource={heroCreditSource}
+    creditUrl={heroCreditUrl}
+    height={440}
+  >
+    {tag && <span class={tagClass}>{tag}</span>}
+    <h1 class="article-hero__title">{title}</h1>
+    <div class="article-hero__meta">
+      {confidence && <span>Confidence: {confidence}</span>}
+      {source && <span>{source}</span>}
+    </div>
+  </HeroImage>
+
+  <div class="article-layout">
+    <article class="article-layout__main">
+      <AuthorCard publishedDate={publishedDate} wordCount={wordCount} />
+      <div class="article-body">
+        <slot />
+      </div>
+      <SocialShare title={title} url={canonicalUrl} />
+    </article>
+
+    {headings.length > 0 && (
+      <div class="article-layout__sidebar">
+        <TableOfContents headings={headings} />
+      </div>
+    )}
+  </div>
+
+  <RelatedArticles articles={relatedArticles} />
+  <NewsletterSignup />
+</Base>
+
+<style>
+  .article-tag {
+    display: inline-block;
+    background: #D4A843;
+    color: #1a1a2e;
+    padding: 0.25rem 0.9rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+  .article-tag--risk {
+    background: #CE1126;
+    color: white;
+  }
+  .article-tag--policy {
+    background: #D4A843;
+    color: #1a1a2e;
+  }
+  .article-hero__title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+    max-width: 800px;
+  }
+  .article-hero__meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .article-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 3rem;
+    align-items: start;
+  }
+  .article-layout__main {
+    min-width: 0;
+  }
+  .article-layout__sidebar {
+    padding-top: 1rem;
+  }
+  @media (max-width: 1024px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .article-layout__sidebar {
+      order: -1;
+      padding-top: 0;
+    }
+    .article-hero__title {
+      font-size: 1.8rem;
+    }
+  }
+</style>
