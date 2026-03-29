@@ -93,21 +93,23 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
   <link rel="stylesheet" href="/styles/global.css" />
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" id="main-nav">
     <div class="nav-inner">
-      <a href="/" class="logo">GhanaScope</a>
+      <a href="/" class="logo">
+        <span class="gradient-text">Ghana</span>Scope
+      </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <line x1="3" y1="6" x2="21" y2="6"/>
           <line x1="3" y1="12" x2="21" y2="12"/>
           <line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="nav-links">
         <a href="/analysis">Analysis</a>
         <a href="/sectors">Sectors</a>
         <a href="/scenarios">Scenarios</a>
-        <a href="/diaspora">Diaspora Guide</a>
+        <a href="/diaspora">Diaspora</a>
         <a href="/about">About</a>
       </div>
     </div>
@@ -148,13 +150,45 @@ const fullTitle = title === 'GhanaScope' ? title : `${title} | GhanaScope`;
   </footer>
 
   <script>
+    // Navigation: scroll-aware backdrop blur
+    const nav = document.getElementById('main-nav');
+    if (nav) {
+      const onScroll = () => {
+        if (window.scrollY > 20) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    // Mobile menu toggle
     const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
+    const links = document.getElementById('nav-links');
     if (toggle && links) {
       toggle.addEventListener('click', () => {
         const open = links.classList.toggle('open');
         toggle.setAttribute('aria-expanded', String(open));
       });
+    }
+
+    // Scroll reveal: observe .reveal elements
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length > 0 && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px',
+      });
+      reveals.forEach((el) => observer.observe(el));
     }
   </script>
 </body>

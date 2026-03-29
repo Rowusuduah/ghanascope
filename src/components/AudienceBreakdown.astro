@@ -9,12 +9,12 @@ interface Props {
 const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
 ---
 
-<section class="audience-breakdown" id="what-this-means">
+<section class="audience-breakdown reveal" id="what-this-means">
   <h2>What This Means for You</h2>
   <div class="audience-grid">
     <div class="audience-card audience-ghanaians">
       <div class="audience-card__header">
-        <span class="audience-card__icon">🇬🇭</span>
+        <div class="audience-card__dot"></div>
         <h3>For Ghanaians</h3>
       </div>
       <div class="audience-card__body" set:html={ghanaians} />
@@ -22,7 +22,7 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
 
     <div class="audience-card audience-investors">
       <div class="audience-card__header">
-        <span class="audience-card__icon">📊</span>
+        <div class="audience-card__dot"></div>
         <h3>For Investors</h3>
       </div>
       <div class="audience-card__body" set:html={investors} />
@@ -30,7 +30,7 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
 
     <div class="audience-card audience-diaspora">
       <div class="audience-card__header">
-        <span class="audience-card__icon">🌍</span>
+        <div class="audience-card__dot"></div>
         <h3>For the Diaspora</h3>
       </div>
       <div class="audience-card__body" set:html={diaspora} />
@@ -38,7 +38,7 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
 
     <div class="audience-card audience-entrepreneurs">
       <div class="audience-card__header">
-        <span class="audience-card__icon">🚀</span>
+        <div class="audience-card__dot"></div>
         <h3>For Entrepreneurs</h3>
       </div>
       <div class="audience-card__body" set:html={entrepreneurs} />
@@ -48,7 +48,7 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
 
 <style>
   .audience-breakdown {
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 2.5rem auto;
     padding: 0 1.5rem;
   }
@@ -57,6 +57,7 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
     font-weight: 700;
     color: #1a1a2e;
     margin-bottom: 1.5rem;
+    letter-spacing: -0.3px;
   }
   .audience-grid {
     display: grid;
@@ -65,45 +66,67 @@ const { ghanaians, investors, diaspora, entrepreneurs } = Astro.props;
   }
   .audience-card {
     background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
     padding: 1.5rem;
-    border-left: 4px solid #e5e7eb;
-    transition: box-shadow 0.2s;
+    border-left: 3px solid #e5e7eb;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .audience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
   }
   .audience-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
   }
-  .audience-ghanaians {
-    border-left-color: #006B3F;
-  }
-  .audience-investors {
-    border-left-color: #D4A843;
-  }
-  .audience-diaspora {
-    border-left-color: #2563EB;
-  }
-  .audience-entrepreneurs {
-    border-left-color: #CE1126;
-  }
+  .audience-card:hover::before { opacity: 1; }
+
+  .audience-ghanaians { border-left-color: #006B3F; }
+  .audience-ghanaians::before { background: radial-gradient(ellipse at top left, rgba(0, 107, 63, 0.03) 0%, transparent 60%); }
+  .audience-investors { border-left-color: #D4A843; }
+  .audience-investors::before { background: radial-gradient(ellipse at top left, rgba(212, 168, 67, 0.03) 0%, transparent 60%); }
+  .audience-diaspora { border-left-color: #2563EB; }
+  .audience-diaspora::before { background: radial-gradient(ellipse at top left, rgba(37, 99, 235, 0.03) 0%, transparent 60%); }
+  .audience-entrepreneurs { border-left-color: #CE1126; }
+  .audience-entrepreneurs::before { background: radial-gradient(ellipse at top left, rgba(206, 17, 38, 0.03) 0%, transparent 60%); }
+
   .audience-card__header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     margin-bottom: 0.75rem;
   }
-  .audience-card__icon {
-    font-size: 1.3rem;
+  .audience-card__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
+  .audience-ghanaians .audience-card__dot { background: #006B3F; }
+  .audience-investors .audience-card__dot { background: #D4A843; }
+  .audience-diaspora .audience-card__dot { background: #2563EB; }
+  .audience-entrepreneurs .audience-card__dot { background: #CE1126; }
+
   .audience-card__header h3 {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #1a1a2e;
     margin: 0;
+    letter-spacing: -0.1px;
   }
   .audience-card__body {
     font-size: 0.92rem;
-    color: #2d2d2d;
+    color: #4b5563;
     line-height: 1.65;
   }
   .audience-card__body :global(p) {

@@ -2,8 +2,10 @@
 ---
 
 <section class="newsletter">
-  <div class="newsletter__inner">
-    <h3 class="newsletter__title">Stay Informed on Ghana</h3>
+  <div class="newsletter__bg"></div>
+  <div class="newsletter__inner reveal">
+    <div class="newsletter__badge">Free Newsletter</div>
+    <h3 class="newsletter__title">Stay Informed on <span class="gradient-text">Ghana</span></h3>
     <p class="newsletter__desc">Get honest Ghana business intelligence delivered to your inbox. No hype. No spam. Just evidence.</p>
     <form class="newsletter__form" id="newsletter-form">
       <input
@@ -14,7 +16,10 @@
         class="newsletter__input"
         aria-label="Email address"
       />
-      <button type="submit" class="newsletter__btn">Subscribe</button>
+      <button type="submit" class="newsletter__btn">
+        Subscribe
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
     </form>
     <p class="newsletter__note" id="newsletter-status">Free. Unsubscribe anytime. We respect your inbox.</p>
   </div>
@@ -46,71 +51,123 @@
 
 <style>
   .newsletter {
-    background: #1a1a2e;
-    padding: 3rem 1.5rem;
-    margin-top: 3rem;
+    position: relative;
+    background: #0a0a1a;
+    padding: 5rem 1.5rem;
+    margin-top: 0;
+    overflow: hidden;
   }
+
+  .newsletter__bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(212, 168, 67, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 50%, rgba(0, 107, 63, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
   .newsletter__inner {
-    max-width: 600px;
+    max-width: 560px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
   }
-  .newsletter__title {
+
+  .newsletter__badge {
+    display: inline-block;
+    padding: 0.25rem 0.8rem;
+    background: rgba(212, 168, 67, 0.1);
     color: #D4A843;
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    border: 1px solid rgba(212, 168, 67, 0.15);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
   }
+
+  .newsletter__title {
+    color: #ffffff;
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.5px;
+  }
+
   .newsletter__desc {
-    color: #9ca3af;
+    color: rgba(255, 255, 255, 0.45);
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     line-height: 1.6;
   }
+
   .newsletter__form {
     display: flex;
     gap: 0.5rem;
     max-width: 440px;
-    margin: 0 auto 0.75rem;
+    margin: 0 auto 1rem;
   }
+
   .newsletter__input {
     flex: 1;
-    padding: 0.75rem 1rem;
-    border: 1px solid #374151;
-    border-radius: 8px;
-    background: #16213e;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
     color: white;
     font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.2s;
   }
   .newsletter__input::placeholder {
-    color: #6b7280;
+    color: rgba(255, 255, 255, 0.25);
   }
   .newsletter__input:focus {
     outline: none;
-    border-color: #D4A843;
+    border-color: rgba(212, 168, 67, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.08);
   }
+
   .newsletter__btn {
-    padding: 0.75rem 1.5rem;
-    background: #D4A843;
-    color: #1a1a2e;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #D4A843 0%, #e8bd52 100%);
+    color: #0a0a1a;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    font-family: inherit;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: all 0.2s;
     white-space: nowrap;
   }
   .newsletter__btn:hover {
-    background: #c49a3a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(212, 168, 67, 0.3);
   }
+  .newsletter__btn:active {
+    transform: translateY(0);
+  }
+
   .newsletter__note {
-    color: #4b5563;
+    color: rgba(255, 255, 255, 0.2);
     font-size: 0.75rem;
+    letter-spacing: 0.01em;
   }
+
   @media (max-width: 480px) {
+    .newsletter { padding: 3.5rem 1.25rem; }
     .newsletter__form {
       flex-direction: column;
+    }
+    .newsletter__btn {
+      justify-content: center;
     }
   }
 </style>

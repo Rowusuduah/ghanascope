@@ -15,15 +15,16 @@ import homepageHero from '../assets/images/heroes/homepage-accra.jpg';
     alt="Aerial view of Accra, Ghana, the business capital of West Africa"
     credit="Virgyl Sowah"
     creditSource="Unsplash"
-    height={520}
+    height={560}
   >
     <span class="hero-tag">Updated March 2026</span>
-    <h1 style="font-size:2.8rem;font-weight:800;line-height:1.15;max-width:800px;margin-bottom:0.75rem;letter-spacing:-0.5px;">Ghana Business Intelligence That Tells You What Actually Fails</h1>
-    <p style="font-size:1.15rem;color:rgba(255,255,255,0.8);max-width:650px;line-height:1.6;margin:0;">Every consultant says Ghana is amazing. We tell you where the money goes to die, and where it actually survives. Evidence-grounded analysis for diaspora founders and investors.</p>
+    <h1 style="font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;line-height:1.08;max-width:800px;margin-bottom:1rem;letter-spacing:-1.5px;">Ghana Business Intelligence That Tells You <span class="gradient-text">What Actually Fails</span></h1>
+    <p style="font-size:1.1rem;color:rgba(255,255,255,0.65);max-width:620px;line-height:1.7;margin:0;">Every consultant says Ghana is amazing. We tell you where the money goes to die, and where it actually survives.</p>
   </HeroImage>
 
   <div class="container">
-    <div class="stats-bar">
+    <!-- Stats Bar -->
+    <div class="stats-bar reveal">
       <div class="stat-card positive">
         <div class="value">6.0%</div>
         <div class="label">GDP Growth (2025 confirmed)</div>
@@ -42,99 +43,97 @@ import homepageHero from '../assets/images/heroes/homepage-accra.jpg';
       </div>
     </div>
 
-    <div class="section-header">
-      <h2>Latest Analysis</h2>
-      <p>Ground-truth reporting on Ghana's business environment. Powered by GhanaWorld v3.0: 25 agents, 6 divisions, real-time web research.</p>
+    <!-- Latest Analysis -->
+    <div class="reveal">
+      <div class="section-header">
+        <h2>Latest Analysis</h2>
+        <p>Ground-truth reporting on Ghana's business environment. Powered by GhanaWorld v3.0: 25 agents, 6 divisions, real-time web research.</p>
+      </div>
+
+      <div class="card-grid">
+        <a href="/analysis/hormuz-crisis-ghana-2026" class="card" style="text-decoration:none;color:inherit">
+          <span class="card-tag risk">Risk Alert</span>
+          <h3>Hormuz Crisis: How $114 Oil Reaches a Ghanaian Market Stall</h3>
+          <p>Diesel up 25.7% in one NPA window. We trace the four transmission channels from the Strait of Hormuz to Ghana's economy with real pricing data. Sector-by-sector impact analysis.</p>
+          <div class="card-meta">
+            <span>March 28, 2026</span>
+            <span>Macro and Global</span>
+            <span>12 min read</span>
+          </div>
+        </a>
+      </div>
     </div>
 
-    <div class="card-grid">
-      <a href="/analysis/hormuz-crisis-ghana-2026" class="card" style="text-decoration:none;color:inherit">
-        <span class="card-tag risk">Risk Alert</span>
-        <h3>Hormuz Crisis: How $114 Oil Reaches a Ghanaian Market Stall</h3>
-        <p>Diesel up 25.7% in one NPA window. We trace the four transmission channels from the Strait of Hormuz to Ghana's economy with real pricing data. Sector-by-sector impact analysis.</p>
-        <div class="card-meta">
-          <span>March 28, 2026</span>
-          <span>Macro and Global</span>
-          <span>12 min read</span>
+    <!-- Coming Soon -->
+    <div class="section-divider"></div>
+
+    <div class="reveal">
+      <div class="section-header">
+        <h2>In the Pipeline</h2>
+        <p>New articles publishing through the v3.0 pipeline. Each passes 8 stages with 3 mandatory quality gates.</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card coming-soon reveal reveal-delay-1">
+          <span class="card-tag risk">Risk Alert</span>
+          <h3>GSE Crash: 73% Rally to 18% Weekly Drop</h3>
+          <p>The Ghana Stock Exchange hit 15,000 for the first time, then crashed to 12,990 in a single week. Panic or structural exit?</p>
+          <div class="card-meta">
+            <span class="pipeline-badge">In Pipeline</span>
+            <span>Capital Markets</span>
+          </div>
         </div>
-      </a>
-    </div>
 
-    <div class="section-header" style="margin-top: 3rem;">
-      <h2>Coming Soon</h2>
-      <p>New articles publishing through the v3.0 pipeline. Each passes 8 stages with 3 mandatory quality gates.</p>
-    </div>
-
-    <div class="card-grid">
-      <div class="card coming-soon">
-        <span class="card-tag risk">Risk Alert</span>
-        <h3>GSE Crash: 73% Rally to 18% Weekly Drop</h3>
-        <p>The Ghana Stock Exchange hit 15,000 for the first time, then crashed to 12,990 in a single week. Panic or structural exit?</p>
-        <div class="card-meta">
-          <span>In Pipeline</span>
-          <span>Capital Markets</span>
+        <div class="card coming-soon reveal reveal-delay-2">
+          <span class="card-tag policy">Policy Analysis</span>
+          <h3>BoG Rate Cut to 14%: What the Split Vote Means for Business</h3>
+          <p>Three voted for 150bps, one for 75bps, one to hold. The May MPC is now the most important monetary policy moment of the year.</p>
+          <div class="card-meta">
+            <span class="pipeline-badge">In Pipeline</span>
+            <span>Monetary Policy</span>
+          </div>
         </div>
-      </div>
 
-      <div class="card coming-soon">
-        <span class="card-tag policy">Policy Analysis</span>
-        <h3>BoG Rate Cut to 14%: What the Split Vote Means for Business</h3>
-        <p>Three voted for 150bps, one for 75bps, one to hold. The May MPC is now the most important monetary policy moment of the year.</p>
-        <div class="card-meta">
-          <span>In Pipeline</span>
-          <span>Monetary Policy</span>
-        </div>
-      </div>
-
-      <div class="card coming-soon">
-        <span class="card-tag">Scenario Analysis</span>
-        <h3>Ghana's Triple Shock: Three Scenarios for 2026</h3>
-        <p>Hormuz, cocoa crisis, and GSE crash hit simultaneously. We model three scenarios with probability estimates and indicator watchlists.</p>
-        <div class="card-meta">
-          <span>In Pipeline</span>
-          <span>Macro Scenario</span>
+        <div class="card coming-soon reveal reveal-delay-3">
+          <span class="card-tag scenario">Scenario Analysis</span>
+          <h3>Ghana's Triple Shock: Three Scenarios for 2026</h3>
+          <p>Hormuz, cocoa crisis, and GSE crash hit simultaneously. We model three scenarios with probability estimates and indicator watchlists.</p>
+          <div class="card-meta">
+            <span class="pipeline-badge">In Pipeline</span>
+            <span>Macro Scenario</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="section-header" style="margin-top: 3rem;">
-      <h2>What We Cover</h2>
-      <p>Ghana-specific intelligence across the sectors and topics that matter to diaspora founders and investors.</p>
-    </div>
+    <!-- What We Cover -->
+    <div class="section-divider"></div>
 
-    <div class="card-grid">
-      <div class="card">
-        <h3>Sector Deep Dives</h3>
-        <p>Agriculture, fintech, real estate, healthcare, logistics: Ghana-specific analysis, not generic emerging market frameworks. Coming in the next publishing cycle.</p>
+    <div class="reveal">
+      <div class="section-header">
+        <h2>What We Cover</h2>
+        <p>Ghana-specific intelligence across the sectors and topics that matter to diaspora founders and investors.</p>
       </div>
-      <div class="card">
-        <h3>Diaspora Founder Guides</h3>
-        <p>GIPC registration, fraud prevention, remote-viable businesses, trust mechanisms. Honest guides for real decisions with real money. Coming soon.</p>
-      </div>
-      <div class="card">
-        <h3>Scenario Analysis</h3>
-        <p>Multiple futures modeled with probability estimates. What breaks the thesis, what to watch, and what to do under each scenario. Coming soon.</p>
+
+      <div class="card-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-card__icon">&#x1F33E;</div>
+          <h3>Sector Deep Dives</h3>
+          <p>Agriculture, fintech, real estate, healthcare, logistics: Ghana-specific analysis, not generic emerging market frameworks.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-card__icon">&#x1F30D;</div>
+          <h3>Diaspora Founder Guides</h3>
+          <p>GIPC registration, fraud prevention, remote-viable businesses, trust mechanisms. Honest guides for real decisions.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-card__icon">&#x1F4CA;</div>
+          <h3>Scenario Analysis</h3>
+          <p>Multiple futures modeled with probability estimates. What breaks the thesis, what to watch, and what to do under each scenario.</p>
+        </div>
       </div>
     </div>
   </div>
 
   <NewsletterSignup />
 </Base>
-
-<style>
-  .coming-soon {
-    opacity: 0.7;
-    position: relative;
-  }
-  .coming-soon::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 1px dashed rgba(212, 168, 67, 0.3);
-    border-radius: 12px;
-    pointer-events: none;
-  }
-</style>
